@@ -26,6 +26,7 @@ const educationDetails =
 aboutMeSuggestion.onclick = aboutMe;
 educationSuggestion.onclick = myEducationDetails;
 projectsSuggestion.onclick = myProjectDetails;
+sendBtn.onclick = response;
 
 let typingTimeouts = [];
 
@@ -89,4 +90,31 @@ function showImage(imgUrl) {
     resultImg.style.opacity = 1;
     resultImg.style.transform = "translateY(0)";
   }, 50);
+}
+
+function response() {
+  const msg = userInput.value.toLowerCase();
+
+  if (
+    msg.includes("about me") ||
+    msg.includes("about yourself") ||
+    msg.includes("personal info") ||
+    msg.includes("who are you")
+  ) {
+    aboutMe();
+  } else if (
+    msg.includes("education") ||
+    msg.includes("study") ||
+    msg.includes("university")
+  ) {
+    myEducationDetails();
+  } else if (
+    msg.includes("project") ||
+    msg.includes("work") ||
+    msg.includes("portfolio")
+  ) {
+    myProjectDetails();
+  }
+
+  userInput.value = ""; // clear input
 }
