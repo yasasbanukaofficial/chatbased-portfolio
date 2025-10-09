@@ -19,6 +19,7 @@
     width: var(--primary-width-desktop);
     margin: auto;
     display: flex;
+    gap: 2vw;
 }
 
 .project-details {
@@ -26,7 +27,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 5vh;
+    gap: 3vh;
     border: 1px solid black;
     border-radius: 2rem;
     width: 20vw;
@@ -35,7 +36,7 @@
 }
 
 .project-img {
-    width: 15vw;
+    width: 80%;
     border-radius: 3rem;
 }
 
@@ -43,17 +44,23 @@
     text-align: left;
     font-size: 1.2rem;
     line-height: 1.7rem;
-    margin: 0 1.5vw;
+    margin: 0 10%;
 }
 
 @media all and (max-width: 1024px) {
     .projects {
         flex-direction: column;
+        align-items: center;
         gap: 3vh;
     }
 
     .project-details {
-        width: 100%;
+        width: 75%;
+    }
+
+    .project-img {
+        width: 70%;
+        border-radius: 3rem;
     }
 }
 

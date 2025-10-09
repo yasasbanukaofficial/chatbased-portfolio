@@ -9,6 +9,8 @@
     padding: 3vh 0vw;
     width: 100%;
     scroll-behavior: smooth;
+    max-height: 68vh;
+    overflow-y: auto;
 }
 
 .results {
