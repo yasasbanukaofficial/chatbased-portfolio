@@ -49,6 +49,11 @@ aboutMeSuggestion.onclick = aboutMe;
 educationSuggestion.onclick = myEducationDetails;
 projectsSuggestion.onclick = myProjectDetails;
 sendBtn.onclick = response;
+userInput.addEventListener("keydown", (e) => {
+  if (e.key == "Enter") {
+    response();
+  }
+});
 
 let typingTimeouts = [];
 function thinkingResponse(thinkingMsg) {
