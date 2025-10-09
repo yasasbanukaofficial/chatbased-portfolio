@@ -9,35 +9,53 @@
             href="./assets/lib/fontawesome/css/all.min.css"
         />
         <link rel="stylesheet" href="./styles/global.css" />
+        <link rel="stylesheet" href="./styles/chat.css" />
         <title>Banu.</title>
     </head>
     <body>
         <main>
+            <section class="results-container">
+                <div class="results">
+                    <img
+                        src=""
+                        alt="result-img"
+                        class="result-img"
+                        id="resultImg"
+                    />
+                    <div>
+                        <p id="resultTxt">Hey Iam yassa</p>
+                    </div>
+                </div>
+            </section>
+            <section class="user-input-container"></section>
             <section class="chat-container">
                 <div class="suggestion-box">
-                    <div class="suggestion">
+                    <div class="suggestion" id="about-me">
                         <p class="suggestion-text">🎉 About Me</p>
                     </div>
-                    <div class="suggestion">
+                    <div class="suggestion" id="education">
                         <p class="suggestion-text">🎓 Education</p>
                     </div>
-                    <div class="suggestion">
+                    <div class="suggestion" id="projects">
                         <p class="suggestion-text">🚀 Projects</p>
                     </div>
                 </div>
                 <div class="chat">
                     <input
-                        placeholder="Enter something fun"
-                        id="chat-input"
+                        placeholder="Enter something fun..."
+                        id="userInput"
                         class="chat-text"
                     />
-                    <i
-                        class="fa-solid fa-paper-plane fa-lg send-btn"
-                        style="color: #000000"
-                    ></i>
+                    <button id="sendBtn" class="send-btn" data-label="Send">
+                        <i
+                            class="fa-solid fa-paper-plane fa-lg"
+                            aria-hidden="true"
+                        ></i>
+                    </button>
                 </div>
             </section>
         </main>
-        <script src="/assets/lib/fontawesome/js/all.min.js"></script>
+        <script src="./scripts/script.js"></script>
+        <script src="./assets/lib/fontawesome/js/all.min.js"></script>
     </body>
 </html>

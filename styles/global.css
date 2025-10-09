@@ -9,6 +9,10 @@
     --color-surface: var(--color-surface-200);
     --color-on-surface: var(--color-neutral-900);
     --color-border: var(--color-neutral-900);
+
+    --primary-width-desktop: 65%;
+    --primary-width-tablet: 80%;
+    --primary-width-mobile: 85%;
 }
 
 body {
@@ -29,87 +33,53 @@ select:focus {
     box-shadow: none;
 }
 
-/* Chat Box */
-.chat-container {
+.results-container {
     position: fixed;
-    bottom: 2.5%;
+    top: 10%;
     left: 0;
     right: 0;
     margin: auto;
     width: fit-content;
-}
-.chat {
-    width: 50vw;
-    padding: 1.5vh 0;
     height: fit-content;
-    border-radius: 20rem;
-    background-color: var(--color-surface-100);
+    padding: 3vh 0vw;
+    width: 100%;
+    scroll-behavior: smooth;
+}
 
+.results {
+    width: var(--primary-width-desktop);
+    margin: auto;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    gap: 4vw;
 }
 
-.chat-text {
-    margin-left: 2rem;
-    width: 90%;
+.result-img {
+    width: 15vw;
+    border-radius: 3rem;
 }
 
-.send-btn {
-    margin-right: 1.5rem;
-    margin-left: 0.5rem;
-    cursor: pointer;
-}
-
-.suggestion-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1vw;
-    margin-bottom: 1.5%;
-    width: fit-content;
-}
-
-.suggestion {
-    padding: 0.5rem 1rem;
-    height: fit-content;
-    width: fit-content;
-
-    border-radius: 20rem;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(118, 102, 85, 0.15);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    color: #333;
-
-    cursor: pointer;
-}
-
-.suggestion-text {
-    font-size: 1rem;
-    transition: font-size 100ms ease-in-out;
-}
-
-.suggestion-text:hover {
-    font-size: 1.2rem;
+.results p {
+    line-height: 1.7rem;
 }
 
 @media all and (max-width: 1024px) {
-    .chat {
-        width: 92vw;
-        padding: 1.5vh 0;
+    .results {
+        flex-direction: column;
+        align-items: start;
     }
-}
 
-@media all and (max-width: 932px) {
-    .chat {
-        width: 92vw;
-        padding: 3vh 0;
+    .result-img {
+        width: 30vw;
     }
 }
 
 @media all and (max-width: 480px) {
-    .chat {
-        padding: 1.5vh 0;
+    .results {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .result-img {
+        width: 50vw;
     }
 }
