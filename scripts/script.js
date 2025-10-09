@@ -11,10 +11,12 @@ const resultTxt = document.getElementById("resultTxt");
 const aboutMeSuggestion = document.getElementById("about-me");
 const educationSuggestion = document.getElementById("education");
 const projectsSuggestion = document.getElementById("projects");
+const skillsSuggestion = document.getElementById("skills");
 
 // Project Section
 const projectSection = document.getElementById("projectSection");
 const eliteProject = document.getElementById("eliteProject");
+const skillSection = document.getElementById("skillSection");
 const strtgstProject = document.getElementById("strtgstProject");
 const devobeeProject = document.getElementById("devobeeProject");
 
@@ -48,6 +50,7 @@ const educationDetails = `
 aboutMeSuggestion.onclick = aboutMe;
 educationSuggestion.onclick = myEducationDetails;
 projectsSuggestion.onclick = myProjectDetails;
+skillsSuggestion.onclick = mySkills;
 sendBtn.onclick = response;
 userInput.addEventListener("keydown", (e) => {
   if (e.key == "Enter") {
@@ -61,7 +64,6 @@ function thinkingResponse(thinkingMsg) {
 }
 
 function showResultText(text, element) {
-  projectSection.style.visibility = "hidden";
   element.style.visibility = "visible";
   typeText(element, text, 30);
 }
@@ -70,6 +72,8 @@ function clearElements() {
   responseTxt.style.visibility = "hidden";
   resultTxt.style.visibility = "hidden";
   resultImg.style.visibility = "hidden";
+  projectSection.style.visibility = "hidden";
+  skillSection.style.visibility = "hidden";
 }
 
 function aboutMe() {
@@ -93,6 +97,30 @@ function aboutMe() {
       }, 100);
 
       showImage(myImgUrl);
+    }, 1500);
+  }, 2000);
+}
+
+function mySkills() {
+  clearElements();
+  thinkingResponse("god thinking...");
+
+  setTimeout(() => {
+    thinkingResponse("Here are my skills");
+
+    setTimeout(() => {
+      clearElements();
+
+      skillSection.style.visibility = "visible";
+      skillSection.style.opacity = 0;
+      skillSection.style.transform = "translateY(50px)";
+      skillSection.style.transition =
+        "opacity 0.6s ease, transform 0.6s ease-in-out";
+
+      setTimeout(() => {
+        skillSection.style.opacity = 1;
+        skillSection.style.transform = "translateY(0)";
+      }, 200);
     }, 1500);
   }, 2000);
 }
@@ -201,6 +229,14 @@ function response() {
     msg.includes("portfolio")
   ) {
     myProjectDetails();
+  } else if (
+    msg.includes("skills") ||
+    msg.includes("tricks") ||
+    msg.includes("programming languages") ||
+    msg.includes("abilities") ||
+    msg.includes("types")
+  ) {
+    mySkills();
   } else if (
     msg.includes("edu") ||
     msg.includes("education") ||
