@@ -63,9 +63,19 @@ function myEducationDetails() {
 }
 
 function myProjectDetails() {
-  projectSection.style.visibility = "visible";
   resultImg.style.visibility = "hidden";
   resultTxt.style.visibility = "hidden";
+
+  projectSection.style.visibility = "visible";
+  projectSection.style.opacity = 0;
+  projectSection.style.transform = "translateY(50px)";
+
+  setTimeout(() => {
+    projectSection.style.transition =
+      "opacity 0.6s ease, transform 0.6s ease-in-out";
+    projectSection.style.opacity = 1;
+    projectSection.style.transform = "translateY(0)";
+  }, 50);
 }
 
 function showImage(imgUrl) {

@@ -6,19 +6,19 @@
     margin: auto;
     width: fit-content;
     height: fit-content;
+    max-height: 70vh;
     padding: 3vh 0vw;
     width: 100%;
     overflow-y: auto;
-    transform: translateY(10px);
+    transform: translateY(50px);
     scroll-behavior: smooth;
+    visibility: hidden;
 }
 
 .projects {
     width: var(--primary-width-desktop);
     margin: auto;
     display: flex;
-    flex-direction: row;
-    gap: 5vw;
 }
 
 .project-details {
@@ -44,4 +44,32 @@
     font-size: 1.2rem;
     line-height: 1.7rem;
     margin: 0 1.5vw;
+}
+
+@media all and (max-width: 1024px) {
+    .projects {
+        flex-direction: column;
+        gap: 3vh;
+    }
+
+    .project-details {
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .project-img {
+        width: 85%;
+    }
+
+    .project-details {
+        width: 100%;
+    }
+
+    .project-text {
+        text-align: left;
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+        margin: 0 4.5vw;
+    }
 }
