@@ -11,21 +11,21 @@ const aboutMeSuggestion = document.getElementById("about-me");
 const educationSuggestion = document.getElementById("education");
 const projectsSuggestion = document.getElementById("projects");
 
+// Project Section
+const projectSection = document.getElementById("projectSection");
+
 // Results
 const myImgUrl = "./assets/img/yasas-banuka.jpg";
 const myDetails =
   "Hi I'am Yasas Banuka also known as banu but I like to have some random texts over here";
 
 const educationLogo = "./assets/img/ijse-logo.png";
+const educationDetails =
+  "🎓 B.Sc. in Computer Science — University of Somewhere. Currently pursuing AI and ML engineering.";
 
 aboutMeSuggestion.onclick = aboutMe;
 educationSuggestion.onclick = myEducationDetails;
-
-sendBtn.onclick = () => {
-  const msg = userInput.value;
-  console.log(msg);
-  userInput.value = "";
-};
+projectsSuggestion.onclick = myProjectDetails;
 
 let typingTimeouts = [];
 
@@ -49,25 +49,23 @@ function typeText(element, text, speed = 30) {
 }
 
 function aboutMe() {
+  projectSection.style.visibility = "hidden";
+  resultTxt.style.visibility = "visible";
   showImage(myImgUrl);
   typeText(resultTxt, myDetails, 30);
 }
 
 function myEducationDetails() {
-  const myDetails =
-    "🎓 B.Sc. in Computer Science — University of Somewhere. Currently pursuing AI and ML engineering.";
-
+  projectSection.style.visibility = "hidden";
+  resultTxt.style.visibility = "visible";
   showImage(educationLogo);
-  typeText(resultTxt, myDetails, 30);
+  typeText(resultTxt, educationDetails, 30);
 }
 
-function projects() {
-  const myImgUrl = "./assets/img/projects.jpg";
-  const myDetails =
-    "🚀 Projects include a chat-based portfolio AI, weather app, and a modern full-stack dashboard.";
-
-  showImage(myImgUrl);
-  typeText(resultTxt, myDetails, 30);
+function myProjectDetails() {
+  projectSection.style.visibility = "visible";
+  resultImg.style.visibility = "hidden";
+  resultTxt.style.visibility = "hidden";
 }
 
 function showImage(imgUrl) {
