@@ -1,0 +1,115 @@
+:root {
+    --color-surface-400: #d9a299;
+    --color-surface-300: #dcc5b2;
+    --color-surface-200: #f0e4d3;
+    --color-surface-100: #faf7f3;
+    --color-surface-0: white;
+    --color-neutral-900: #000000;
+
+    --color-surface: var(--color-surface-200);
+    --color-on-surface: var(--color-neutral-900);
+    --color-border: var(--color-neutral-900);
+}
+
+body {
+    background-color: var(--color-surface);
+}
+
+p {
+    margin: 0;
+}
+
+input,
+input:focus,
+textarea:focus,
+select:focus {
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Chat Box */
+.chat-container {
+    position: fixed;
+    bottom: 2.5%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+}
+.chat {
+    width: 50vw;
+    padding: 1.5vh 0;
+    height: fit-content;
+    border-radius: 20rem;
+    background-color: var(--color-surface-100);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-text {
+    margin-left: 2rem;
+    width: 90%;
+}
+
+.send-btn {
+    margin-right: 1.5rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.suggestion-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1vw;
+    margin-bottom: 1.5%;
+    width: fit-content;
+}
+
+.suggestion {
+    padding: 0.5rem 1rem;
+    height: fit-content;
+    width: fit-content;
+
+    border-radius: 20rem;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(118, 102, 85, 0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+
+    cursor: pointer;
+}
+
+.suggestion-text {
+    font-size: 1rem;
+    transition: font-size 100ms ease-in-out;
+}
+
+.suggestion-text:hover {
+    font-size: 1.2rem;
+}
+
+@media all and (max-width: 1024px) {
+    .chat {
+        width: 92vw;
+        padding: 1.5vh 0;
+    }
+}
+
+@media all and (max-width: 932px) {
+    .chat {
+        width: 92vw;
+        padding: 3vh 0;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .chat {
+        padding: 1.5vh 0;
+    }
+}
