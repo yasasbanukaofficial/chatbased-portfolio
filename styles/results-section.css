@@ -54,7 +54,26 @@
     }
 }
 
+@media all and (max-width: 932px) {
+    .results-container {
+        max-height: 60vh;
+    }
+
+    .results {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .result-img {
+        width: 50vw;
+    }
+}
+
 @media all and (max-width: 480px) {
+    .results-container {
+        max-height: 70vh;
+    }
+
     .results {
         flex-direction: column;
         align-items: start;

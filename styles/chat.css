@@ -80,18 +80,23 @@
     }
 }
 
-@media all and (max-width: 480px) {
+@media all and (max-width: 640px) {
     .suggestion-box {
         width: var(--primary-width-mobile);
         margin-bottom: 2%;
+        display: flex;
+        gap: 0.5vw;
+        overflow-x: auto;
+        scrollbar-width: thin;
     }
 
     .suggestion-text {
-        font-size: 3vw;
+        font-size: 3.5vw;
+        white-space: nowrap;
     }
 
     .chat {
         width: var(--primary-width-mobile);
-        height: 6vh;
+        height: 11vw;
     }
 }

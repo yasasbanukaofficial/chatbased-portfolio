@@ -151,39 +151,53 @@ function showImage(imgUrl) {
   }, 50);
 }
 
-async function response() {
+function response() {
   clearElements();
   const msg = userInput.value.toLowerCase();
 
-  // Custom response logic
+  let responded = false;
+
   if (
+    msg.includes("you") ||
     msg.includes("yasas banuka") ||
     msg.includes("yourself") ||
     msg.includes("personal info") ||
     msg.includes("who are you")
   ) {
     aboutMe();
-  } else if (
+    responded = true;
+  }
+
+  if (
+    msg.includes("edu") ||
     msg.includes("education") ||
     msg.includes("study") ||
     msg.includes("university")
   ) {
     myEducationDetails();
-  } else if (
+    responded = true;
+  }
+
+  if (
     msg.includes("project") ||
     msg.includes("work") ||
     msg.includes("portfolio")
   ) {
     myProjectDetails();
-  } else if (
+    responded = true;
+  }
+
+  if (
     msg.includes("hey") ||
     msg.includes("hi") ||
     msg.includes("sup") ||
     msg.includes("how are you")
   ) {
     showResultText("Hey! How's it going? I'm doing fine btw.", responseTxt);
-  } else {
-    clearElements();
+    responded = true;
+  }
+
+  if (!responded) {
     showResultText(
       "Hey I hope I could respond to your question: " +
         msg +
@@ -191,5 +205,6 @@ async function response() {
       responseTxt,
     );
   }
+
   userInput.value = "";
 }
