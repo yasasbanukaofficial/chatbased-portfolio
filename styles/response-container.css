@@ -1,4 +1,4 @@
-.ai-container {
+.response-container {
     position: fixed;
     top: 10%;
     left: 0;
@@ -13,7 +13,7 @@
     overflow-y: auto;
 }
 
-.ai-container p {
+.response-container p {
     font-size: 1.2rem;
     line-height: 2rem;
     text-align: left;

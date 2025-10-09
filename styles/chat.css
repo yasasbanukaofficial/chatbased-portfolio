@@ -14,7 +14,7 @@
     margin: auto;
     height: 5vh;
     border-radius: 20rem;
-    background-color: var(--color-surface-100);
+    box-shadow: 5px 5px 10px 2px lightslategray;
 
     display: flex;
     align-items: center;

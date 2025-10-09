@@ -8,7 +8,7 @@
     --color-surface-0: white;
     --color-neutral-900: #000000;
 
-    --color-surface: var(--color-surface-200);
+    --color-surface: var(--color-surface-100);
     --color-on-surface: var(--color-neutral-900);
     --color-border: var(--color-neutral-900);
 
@@ -34,9 +34,26 @@ body {
     background-color: var(--color-surface);
 }
 
+em {
+    color: crimson;
+}
+
+strong {
+    background-color: lightblue;
+    color: black;
+}
+
+em::selection {
+    background-color: indianred;
+}
+
 p {
     margin: 0;
     font-family: var(--font-family-description);
+}
+
+p::selection {
+    background-color: white;
 }
 
 input,
