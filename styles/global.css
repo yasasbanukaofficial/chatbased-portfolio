@@ -73,6 +73,7 @@ select:focus {
 .result-img {
     width: 15vw;
     border-radius: 3rem;
+    visibility: hidden;
 }
 
 .results p {
