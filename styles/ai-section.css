@@ -1,0 +1,20 @@
+.ai-container {
+    position: fixed;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    padding: 3vh 0vw;
+    width: var(--primary-width-desktop);
+    scroll-behavior: smooth;
+    max-height: 68vh;
+    overflow-y: auto;
+}
+
+.ai-container p {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    text-align: left;
+}

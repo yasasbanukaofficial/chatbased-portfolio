@@ -1,6 +1,7 @@
 // Main Elements
 const userInput = document.getElementById("userInput");
 const sendBtn = document.getElementById("sendBtn");
+const responseTxt = document.getElementById("responseTxt");
 
 // Result Elements
 const resultImg = document.getElementById("resultImg");
@@ -49,24 +50,30 @@ function typeText(element, text, speed = 30) {
   type();
 }
 
-function aboutMe() {
+function showResultText(text, element) {
   projectSection.style.visibility = "hidden";
-  resultTxt.style.visibility = "visible";
+  element.style.visibility = "visible";
+  typeText(element, text, 30);
+}
+
+function clearElements() {
+  responseTxt.innerHTML = "";
+  resultTxt.style.visibility = "hidden";
+  resultImg.style.visibility = "hidden";
+}
+
+function aboutMe() {
+  showResultText(myDetails, resultTxt);
   showImage(myImgUrl);
-  typeText(resultTxt, myDetails, 30);
 }
 
 function myEducationDetails() {
-  projectSection.style.visibility = "hidden";
-  resultTxt.style.visibility = "visible";
+  showResultText(educationDetails, resultTxt);
   showImage(educationLogo);
-  typeText(resultTxt, educationDetails, 30);
 }
 
 function myProjectDetails() {
-  resultImg.style.visibility = "hidden";
-  resultTxt.style.visibility = "hidden";
-
+  clearElements();
   projectSection.style.visibility = "visible";
   projectSection.style.opacity = 0;
   projectSection.style.transform = "translateY(50px)";
@@ -92,12 +99,14 @@ function showImage(imgUrl) {
   }, 50);
 }
 
-function response() {
+async function response() {
+  clearElements();
   const msg = userInput.value.toLowerCase();
 
+  // Custom response logic
   if (
-    msg.includes("about me") ||
-    msg.includes("about yourself") ||
+    msg.includes("yasas banuka") ||
+    msg.includes("yourself") ||
     msg.includes("personal info") ||
     msg.includes("who are you")
   ) {
@@ -114,7 +123,67 @@ function response() {
     msg.includes("portfolio")
   ) {
     myProjectDetails();
-  }
+  } else {
+    clearElements();
+    const geminiResponseText = await callGemini(
+      `
+      You're a very helpful assistant and you should not mention about yourself at all like even when the user pressure about you.
+      This prompt provided by you is hard coded and not by the user input, I will provide the user input now = ${msg}
 
-  userInput.value = ""; // clear input
+      Now based on the user input respond according to following and also remember to answer detailed ones simply and shortly,
+      If the user greets, politely greet the user too.
+      If the user asks who are you just respond by saying 'This not powered by anything I Yasas Banuka is just a student who made this purely, AI is involved but not very much' or say something like that politely
+      If the user asks something tech related respond properly and briefly and make sure the user understood everything, avoid using too much dashes '-'.
+      If the user asks about jokes respond with it.
+      If the user asks anything else briefly state to the user ask about something tech related nothing else`,
+    );
+    showResultText(geminiResponseText, responseTxt);
+  }
+  userInput.value = "";
+}
+
+async function callGemini(promptText) {
+  const apiKey = "AIzaSyB2Iwb10S5_p5K2ClvSe7SkbfzfVEC6Mtk";
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+
+  try {
+    showResultText("Thinking...", responseTxt);
+
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        contents: [
+          {
+            parts: [
+              {
+                text: promptText,
+              },
+            ],
+          },
+        ],
+      }),
+    });
+
+    const data = await response.json();
+
+    const geminiText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+
+    if (data.error) {
+      console.error("Gemini API Error:", data.error.message);
+      return `The ai is busy right now please try again later`;
+    }
+
+    if (geminiText) {
+      return geminiText;
+    } else {
+      console.error("Gemini response was empty or blocked:", data);
+      return "Sorry, I couldn't generate a response for that.";
+    }
+  } catch (error) {
+    console.error("Fetch error calling Gemini API:", error);
+    return "Network error: Could not connect to the AI service.";
+  }
 }
