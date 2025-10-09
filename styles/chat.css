@@ -105,3 +105,14 @@
         height: 11vw;
     }
 }
+
+@media all and (max-width: 480px) {
+    .chat {
+        width: var(--primary-width-mobile);
+        height: 12vw;
+    }
+
+    .chat-text {
+        font-size: 0.8rem;
+    }
+}

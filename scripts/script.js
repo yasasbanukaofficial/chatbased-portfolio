@@ -30,7 +30,7 @@ const myDetails = `Hi I'm Yasas Banuka, a <em>tech nerd</em>,
   <b>Age</b>: <strong>${age} years</strong> <br/>
   <b>Resides</b>: <strong>Sri Lanka</strong> <br/>
   <b>Secret of winning</b>: <em>To win, working hard isn't enough, other's must loose.</em>
-  <b>My Quotation</b>: <em>Comfort kills dreams</em> <br/> <br />
+  <br /><b>My Quotation</b>: <em>Comfort kills dreams.</em> <br/> <br />
 
   Hope you got to know me ✌️.`;
 
