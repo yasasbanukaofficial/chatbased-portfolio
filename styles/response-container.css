@@ -27,3 +27,9 @@
     line-height: 1.5;
     visibility: hidden;
 }
+
+@media all and (max-width: 932px) {
+    .response-container {
+        width: var(--primary-width-tablet);
+    }
+}
