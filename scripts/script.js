@@ -25,6 +25,26 @@ sendBtn.onclick = () => {
 aboutMeSuggestion.onclick = aboutMe;
 
 function aboutMe() {
+  resultTxt.textContent = "";
+  resultImg.style.opacity = 0;
+  resultImg.style.transform = "translateY(10px)";
   resultImg.src = myImgUrl;
-  resultTxt.textContent = myDetails;
+
+  setTimeout(() => {
+    resultImg.style.transition = "opacity 1s ease, transform 0.6s ease";
+    resultImg.style.opacity = 1;
+    resultImg.style.transform = "translateY(0)";
+  }, 100);
+
+  let i = 0;
+  const typingSpeed = 30;
+  function type() {
+    if (i < myDetails.length) {
+      resultTxt.textContent += myDetails.charAt(i);
+      i++;
+      setTimeout(type, typingSpeed);
+    }
+  }
+
+  setTimeout(type, 300);
 }

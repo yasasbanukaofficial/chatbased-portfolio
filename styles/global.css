@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Atma:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Questrial&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap");
+
 :root {
     --color-surface-400: #d9a299;
     --color-surface-300: #dcc5b2;
@@ -10,6 +12,19 @@
     --color-on-surface: var(--color-neutral-900);
     --color-border: var(--color-neutral-900);
 
+    --font-family-base: "Montserrat", sans-serif;
+    --font-family-heading: "Atma", system-ui;
+    --font-family-description: "ABeeZee", sans-serif;
+    --font-family-caption: "Questrial", sans-serif;
+    --font-family-jp: "Noto Sans JP", sans-serif;
+
+    --font-weight-extralight: 200;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
     --primary-width-desktop: 65%;
     --primary-width-tablet: 80%;
     --primary-width-mobile: 85%;
@@ -21,6 +36,7 @@ body {
 
 p {
     margin: 0;
+    font-family: var(--font-family-description);
 }
 
 input,
@@ -31,6 +47,7 @@ select:focus {
     border: transparent;
     outline: none;
     box-shadow: none;
+    font-family: var(--font-family-base);
 }
 
 .results-container {
@@ -59,6 +76,7 @@ select:focus {
 }
 
 .results p {
+    font-size: 1.2rem;
     line-height: 1.7rem;
 }
 
