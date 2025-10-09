@@ -39,13 +39,21 @@
 .project-img {
     width: 80%;
     border-radius: 3rem;
+    border: 1px solid black;
 }
 
+h3,
 .project-text {
     text-align: left;
     font-size: 1.2rem;
     line-height: 1.7rem;
     margin: 0 10%;
+}
+
+h3 {
+    line-height: 1.7rem;
+    text-align: left;
+    font-family: var(--font-family-base);
 }
 
 @media all and (max-width: 1024px) {
@@ -74,6 +82,7 @@
         width: 100%;
     }
 
+    h3,
     .project-text {
         text-align: left;
         font-size: 1.2rem;

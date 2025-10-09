@@ -14,6 +14,9 @@ const projectsSuggestion = document.getElementById("projects");
 
 // Project Section
 const projectSection = document.getElementById("projectSection");
+const eliteProject = document.getElementById("eliteProject");
+const strtgstProject = document.getElementById("strtgstProject");
+const devobeeProject = document.getElementById("devobeeProject");
 
 const age = new Date().getFullYear() - 2007;
 
@@ -26,13 +29,21 @@ const myDetails = `Hi I'm Yasas Banuka, a <em>tech nerd</em>,
   Here's more details as a summary; <br />
   <b>Age</b>: <strong>${age} years</strong> <br/>
   <b>Resides</b>: <strong>Sri Lanka</strong> <br/>
-  <b>Goal</b>: <em>Cyber security specialist</em> <br/> <br />
+  <b>Secret of winning</b>: <em>To win, working hard isn't enough, other's must loose.</em>
+  <b>My Quotation</b>: <em>Comfort kills dreams</em> <br/> <br />
 
   Hope you got to know me ✌️.`;
 
 const educationLogo = "./assets/img/ijse-logo.png";
-const educationDetails =
-  "🎓 B.Sc. in Computer Science — University of Somewhere. Currently pursuing AI and ML engineering.";
+const educationDetails = `
+  I'm currently pursuing a <b>graduate diploma</b> in software engineering.<br /> <br />
+  I <em>hope</em> to pursue a career in both <strong>software engineering</strong> and <strong>cyber security engineering</strong> which is <em>hard</em> but I'm <strong>determined</strong>
+  <br /> <br />
+  Here's what's going on with my education; <br />
+  <b>Diploma</b>: <strong>Graduate Diploma at IJSE institute</strong> <br/>
+  <b>Goal</b>: <em>Cyber security specialist</em> <br/> <br />
+
+  Hope you got to know me ✌️.`;
 
 aboutMeSuggestion.onclick = aboutMe;
 educationSuggestion.onclick = myEducationDetails;
@@ -44,25 +55,6 @@ function thinkingResponse(thinkingMsg) {
   showResultText(thinkingMsg, responseTxt);
 }
 
-function typeText(element, text, speed = 30) {
-  typingTimeouts.forEach(clearTimeout);
-  typingTimeouts = [];
-
-  element.textContent = "";
-  let i = 0;
-
-  function type() {
-    if (i < text.length) {
-      element.textContent += text.charAt(i);
-      i++;
-      const timeout = setTimeout(type, speed);
-      typingTimeouts.push(timeout);
-    }
-  }
-
-  type();
-}
-
 function showResultText(text, element) {
   projectSection.style.visibility = "hidden";
   element.style.visibility = "visible";
@@ -70,7 +62,7 @@ function showResultText(text, element) {
 }
 
 function clearElements() {
-  responseTxt.innerHTML = "";
+  responseTxt.style.visibility = "hidden";
   resultTxt.style.visibility = "hidden";
   resultImg.style.visibility = "hidden";
 }
@@ -84,7 +76,7 @@ function aboutMe() {
 
     setTimeout(() => {
       clearElements();
-      resultTxt.innerHTML = myDetails; // set HTML directly
+      resultTxt.innerHTML = myDetails;
       resultTxt.style.visibility = "visible";
       resultTxt.style.opacity = 0;
       resultTxt.style.transform = "translateY(30px)";
@@ -110,30 +102,73 @@ function myEducationDetails() {
 
     setTimeout(() => {
       clearElements();
-      showResultText(educationDetails, resultTxt);
+      resultTxt.innerHTML = educationDetails;
+      resultTxt.style.visibility = "visible";
+      resultTxt.style.opacity = 0;
+      resultTxt.style.transform = "translateY(30px)";
+      resultTxt.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+
+      setTimeout(() => {
+        resultTxt.style.opacity = 1;
+        resultTxt.style.transform = "translateY(0)";
+      }, 100);
+
       showImage(educationLogo);
     }, 1500);
   }, 2000);
 }
 
+function typeText(element, text, speed = 30) {
+  element.textContent = "";
+  let i = 0;
+
+  function type() {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+
+  type();
+}
+
 function myProjectDetails() {
   clearElements();
   thinkingResponse("Ohh projects...");
+
   setTimeout(() => {
     thinkingResponse("Here's the latest ones 🚀");
 
     setTimeout(() => {
       clearElements();
+
       projectSection.style.visibility = "visible";
       projectSection.style.opacity = 0;
       projectSection.style.transform = "translateY(50px)";
+      projectSection.style.transition =
+        "opacity 0.6s ease, transform 0.6s ease-in-out";
 
       setTimeout(() => {
-        projectSection.style.transition =
-          "opacity 0.6s ease, transform 0.6s ease-in-out";
+        typeText(
+          eliteProject,
+          "Developed a JavaFX based Driving School Management System automating scheduling, enrollment, and payments, boosting efficiency 60% with Hibernate, MySQL, and layered architecture.",
+          50,
+        );
+        typeText(
+          strtgstProject,
+          "AI powered education tracker integrating scheduling, grading, and chat features using JavaFX, MySQL, and Gemini API with a layered architecture for efficiency.",
+          40,
+        );
+        typeText(
+          devobeeProject,
+          "Basic minimalist blog built using pure HTML, CSS and where all the content management is powered by Hugo.",
+          30,
+        );
+
         projectSection.style.opacity = 1;
         projectSection.style.transform = "translateY(0)";
-      }, 50);
+      }, 200);
     }, 1500);
   }, 2000);
 }
@@ -155,9 +190,20 @@ function response() {
   clearElements();
   const msg = userInput.value.toLowerCase();
 
-  let responded = false;
-
   if (
+    msg.includes("project") ||
+    msg.includes("work") ||
+    msg.includes("portfolio")
+  ) {
+    myProjectDetails();
+  } else if (
+    msg.includes("edu") ||
+    msg.includes("education") ||
+    msg.includes("study") ||
+    msg.includes("university")
+  ) {
+    myEducationDetails();
+  } else if (
     msg.includes("you") ||
     msg.includes("yasas banuka") ||
     msg.includes("yourself") ||
@@ -165,39 +211,14 @@ function response() {
     msg.includes("who are you")
   ) {
     aboutMe();
-    responded = true;
-  }
-
-  if (
-    msg.includes("edu") ||
-    msg.includes("education") ||
-    msg.includes("study") ||
-    msg.includes("university")
-  ) {
-    myEducationDetails();
-    responded = true;
-  }
-
-  if (
-    msg.includes("project") ||
-    msg.includes("work") ||
-    msg.includes("portfolio")
-  ) {
-    myProjectDetails();
-    responded = true;
-  }
-
-  if (
+  } else if (
     msg.includes("hey") ||
     msg.includes("hi") ||
     msg.includes("sup") ||
     msg.includes("how are you")
   ) {
     showResultText("Hey! How's it going? I'm doing fine btw.", responseTxt);
-    responded = true;
-  }
-
-  if (!responded) {
+  } else {
     showResultText(
       "Hey I hope I could respond to your question: " +
         msg +
