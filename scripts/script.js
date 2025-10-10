@@ -17,6 +17,7 @@ const skillsSuggestion = document.getElementById("skills");
 const projectSection = document.getElementById("projectSection");
 const eliteProject = document.getElementById("eliteProject");
 const skillSection = document.getElementById("skillSection");
+const heroSection = document.getElementById("heroSection");
 const strtgstProject = document.getElementById("strtgstProject");
 const devobeeProject = document.getElementById("devobeeProject");
 
@@ -74,6 +75,7 @@ function clearElements() {
   resultImg.style.visibility = "hidden";
   projectSection.style.visibility = "hidden";
   skillSection.style.visibility = "hidden";
+  heroSection.style.visibility = "hidden";
 }
 
 function aboutMe() {
