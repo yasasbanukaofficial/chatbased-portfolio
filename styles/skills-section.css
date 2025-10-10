@@ -52,6 +52,19 @@
         gap: 4vh;
     }
 }
+
+@media all and (max-width: 985px) {
+    .skills-section {
+        max-height: 53vh;
+    }
+    .img-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 4vh;
+    }
+}
+
 @media all and (max-width: 480px) {
     .skills-section {
         max-height: 65vh;
