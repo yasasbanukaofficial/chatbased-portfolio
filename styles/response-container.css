@@ -32,4 +32,7 @@
     .response-container {
         width: var(--primary-width-tablet);
     }
+    .response-container > p {
+        font-size: 1rem;
+    }
 }

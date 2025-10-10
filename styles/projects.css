@@ -79,6 +79,9 @@ h3 {
 }
 
 @media all and (max-width: 480px) {
+    .projects-section {
+        max-height: 65vh;
+    }
     .project-img {
         width: 85%;
     }
@@ -90,7 +93,7 @@ h3 {
     h3,
     .project-text {
         text-align: left;
-        font-size: 1.2rem;
+        font-size: 1rem;
         line-height: 1.7rem;
         margin: 0 4.5vw;
     }
