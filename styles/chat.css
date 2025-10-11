@@ -106,7 +106,7 @@
     }
 }
 
-@media all and (max-width: 480px) {
+@media all and (max-width: 576px) {
     .chat {
         width: var(--primary-width-mobile);
         height: 12vw;

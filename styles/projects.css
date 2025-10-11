@@ -78,7 +78,7 @@ h3 {
     }
 }
 
-@media all and (max-width: 480px) {
+@media all and (max-width: 576px) {
     .projects-section {
         max-height: 65vh;
     }

@@ -116,7 +116,7 @@ strong::selection {
 }
 
 /* Mobile Version */
-@media all and (max-width: 480px) {
+@media all and (max-width: 576px) {
     .hero {
         width: var(--primary-width-mobile);
         flex-direction: column;
