@@ -72,7 +72,7 @@
     margin-left: 1.5rem;
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1080px) {
     .suggestion-box {
         width: var(--primary-width-tablet);
         margin-bottom: 1.5%;

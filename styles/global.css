@@ -28,6 +28,10 @@
     --primary-width-desktop: 65%;
     --primary-width-tablet: 80%;
     --primary-width-mobile: 85%;
+
+    --circle-width-desktop: 20rem;
+    --circle-width-tablet: calc(20vw + 10vh);
+    --circle-width-mobile: 30vh;
 }
 
 body {

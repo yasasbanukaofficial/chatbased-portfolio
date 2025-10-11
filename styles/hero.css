@@ -1,8 +1,4 @@
 /* Hero Section */
-.decor-circle {
-    border-radius: 20rem;
-}
-
 strong::selection {
     background-color: black;
     color: wheat;
@@ -15,16 +11,18 @@ strong::selection {
     right: 0;
     margin: auto;
     width: fit-content;
-    height: 30vh;
+    height: 60%;
     padding: 3vh 0vw;
-    width: 100%;
+    width: var(--primary-width-desktop);
     scroll-behavior: smooth;
-    max-height: 60vh;
     overflow-y: auto;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
 .hero-details {
-    width: var(--primary-width-desktop);
+    width: 100%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -50,83 +48,70 @@ strong::selection {
     margin-top: 1.5rem;
 }
 
-.circle-red {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    right: 20%;
-    background-color: #c42f2f;
-    width: clamp(13rem, 20vw, 20rem);
+.circle {
+    border-radius: 100%;
     aspect-ratio: 1/1;
-    z-index: -1;
+}
+
+.circle-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.circle-red {
+    width: var(--circle-width-desktop);
+    background-color: darkred;
 }
 
 .circle-white {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    right: 10%;
+    width: calc(var(--circle-width-desktop) / 3);
     background-color: white;
-    width: clamp(6rem, 10vw, 7rem);
-    aspect-ratio: 1/1;
-    z-index: -1;
-
-    animation: rotate 10s infinite alternate ease-in-out;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(740deg);
-    }
+    margin-right: 2rem;
 }
 
 .circle-black {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    right: 10%;
-    background-color: rgb(0, 0, 0, 0.8);
-    width: clamp(2rem, 5vw, 3rem);
-    aspect-ratio: 1/1;
-    z-index: -1;
+    width: calc(var(--circle-width-desktop) / 6);
+    background-color: black;
+    margin-right: 0.3rem;
 }
 
 /* Media Queries */
 
 /* Tablet Version */
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1080px) {
     .hero {
-        width: 100%;
+        width: var(--primary-width-tablet);
         gap: 0px;
-        max-height: 100vh;
+        justify-content: space-between;
+        align-items: center;
     }
+
     .hero-details {
-        margin: 10vh;
+        margin: 10vh 10vh 10vh 0;
+        justify-content: center;
     }
 
     .hero-details > p:nth-child(1) {
         font-size: 1.2rem;
-        line-height: 2.5vh;
+        line-height: 2rem;
     }
-    .circle-red {
-        width: 20vh;
-        right: 10%;
-        margin-bottom: 7vh;
-    }
-}
 
-/* Portrait Mobile Version */
-@media all and (max-width: 932px) {
     .circle-red {
-        position: absolute;
-        top: 20%;
+        width: var(--circle-width-tablet);
+        background-color: darkred;
+    }
+
+    .circle-white {
+        width: calc(var(--circle-width-tablet) / 2.5);
+        background-color: white;
+        margin-right: 2rem;
+    }
+
+    .circle-black {
+        width: calc(var(--circle-width-tablet) / 6);
+        background-color: black;
+        margin-right: 0.3rem;
     }
 }
 
@@ -135,10 +120,9 @@ strong::selection {
     .hero {
         width: var(--primary-width-mobile);
         flex-direction: column;
-        height: 70vh;
     }
     .hero-details {
-        width: 100%;
+        width: fit-content;
         margin: 10vw;
     }
 
@@ -147,7 +131,19 @@ strong::selection {
     }
 
     .circle-red {
-        width: 50vw;
-        margin-top: 50%;
+        width: var(--circle-width-mobile);
+        background-color: darkred;
+    }
+
+    .circle-white {
+        width: calc(var(--circle-width-mobile) / 2.5);
+        background-color: white;
+        margin-right: 2rem;
+    }
+
+    .circle-black {
+        width: calc(var(--circle-width-mobile) / 6);
+        background-color: black;
+        margin-right: 0.3rem;
     }
 }
