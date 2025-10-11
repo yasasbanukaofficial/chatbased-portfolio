@@ -50,7 +50,7 @@ strong::selection {
     margin-top: 1.5rem;
 }
 
-.samurai-redmoon {
+.circle-red {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -62,7 +62,7 @@ strong::selection {
     z-index: -1;
 }
 
-.samurai-whitemoon {
+.circle-white {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -86,7 +86,7 @@ strong::selection {
     }
 }
 
-.samurai-blackmoon {
+.circle-black {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -115,7 +115,7 @@ strong::selection {
         font-size: 1.2rem;
         line-height: 2.5vh;
     }
-    .samurai-redmoon {
+    .circle-red {
         width: 20vh;
         right: 10%;
         margin-bottom: 7vh;
@@ -124,7 +124,7 @@ strong::selection {
 
 /* Portrait Mobile Version */
 @media all and (max-width: 932px) {
-    .samurai-redmoon {
+    .circle-red {
         position: absolute;
         top: 20%;
     }
@@ -146,7 +146,7 @@ strong::selection {
         line-height: 2rem;
     }
 
-    .samurai-redmoon {
+    .circle-red {
         width: 50vw;
         margin-top: 50%;
     }
