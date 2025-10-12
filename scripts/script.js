@@ -31,7 +31,7 @@ const myDetails = `Hi I'm Yasas Banuka, a <em>tech nerd</em>,
   people’s attention. <br /> <br />
   Here's more details as a summary; <br />
   <b>Age</b>: <strong>${age} years</strong> <br/>
-  <b>Resides</b>: <strong>Sri Lanka</strong> <br/>
+  <b>Resides in</b>: <strong>Sri Lanka</strong> <br/>
   <b>Secret of winning</b>: <em>To win, working hard isn't enough, other's must loose.</em>
   <br /><b>My Quotation</b>: <em>Comfort kills dreams.</em> <br/> <br />
 
@@ -46,7 +46,7 @@ const educationDetails = `
   <b>Diploma</b>: <strong>Graduate Diploma at IJSE institute</strong> <br/>
   <b>Goal</b>: <em>Cyber security specialist</em> <br/> <br />
 
-  Hope you got to know me ✌️.
+  Hope you got to know my education status ✌️.
   `;
 
 // On click and event listeners
