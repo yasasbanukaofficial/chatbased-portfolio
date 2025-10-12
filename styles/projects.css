@@ -65,6 +65,7 @@ h3 {
 
     .project-details {
         width: 75%;
+        margin-bottom: 1.2rem;
     }
 
     .project-img {
@@ -80,14 +81,14 @@ h3 {
 
 @media all and (max-width: 576px) {
     .projects-section {
-        max-height: 65vh;
-    }
-    .project-img {
-        width: 85%;
+        max-height: 70vh;
     }
 
     .project-details {
         width: 100%;
+    }
+    .project-img {
+        width: 85%;
     }
 
     h3,
