@@ -65,8 +65,10 @@
     transition: font-size 100ms ease-in-out;
 }
 
-.suggestion-text:hover {
-    font-size: 1.2rem;
+@media all and (min-width: 1080px) {
+    .suggestion-text:hover {
+        font-size: 1.2rem;
+    }
 }
 
 @media all and (max-width: 1080px) {
