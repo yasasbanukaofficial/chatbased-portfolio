@@ -1,0 +1,46 @@
+h1 {
+    font-family: var(--font-family-base);
+    font-weight: var(--font-weight-semibold);
+}
+
+header {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    width: var(--primary-width-desktop);
+    scroll-behavior: smooth;
+    max-height: 60vh;
+    overflow-y: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header > a {
+    font-size: 0.8rem;
+    align-items: center;
+    text-align: left;
+}
+
+@media all and (max-width: 1024px) {
+    header {
+        width: var(--primary-width-tablet);
+    }
+}
+
+@media all and (max-width: 978px) {
+    header > a {
+        font-size: 0.7rem;
+    }
+}
+
+@media all and (max-width: 576px) {
+    header {
+        width: var(--primary-width-mobile);
+    }
+}
