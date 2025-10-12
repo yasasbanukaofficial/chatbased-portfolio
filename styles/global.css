@@ -60,6 +60,25 @@ p::selection {
     background-color: white;
 }
 
+h3,
+h4,
+li {
+    font-family: var(--font-family-base);
+}
+
+h4 {
+    margin-bottom: 0;
+}
+
+ul {
+    padding-left: 10px;
+    gap: 2vh;
+}
+
+li {
+    font-weight: var(--font-weight-normal);
+}
+
 input,
 input:focus,
 textarea:focus,
