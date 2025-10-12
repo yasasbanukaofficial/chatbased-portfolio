@@ -19,10 +19,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-left: 1rem;
 }
 
 .chat-text {
-    margin-left: 1rem;
+    margin-left: 0.7rem;
     width: 90%;
 }
 
@@ -68,10 +69,6 @@
     font-size: 1.2rem;
 }
 
-.arrow {
-    margin-left: 1.5rem;
-}
-
 @media all and (max-width: 1080px) {
     .suggestion-box {
         width: var(--primary-width-tablet);
@@ -81,6 +78,10 @@
     .chat {
         width: var(--primary-width-tablet);
         height: 5.5vw;
+    }
+
+    .send-icon {
+        width: 1.8rem;
     }
 }
 
@@ -114,5 +115,9 @@
 
     .chat-text {
         font-size: 0.8rem;
+    }
+
+    .send-icon {
+        width: 1.3rem;
     }
 }
