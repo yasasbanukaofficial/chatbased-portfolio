@@ -46,22 +46,41 @@ const educationDetails = `
   <b>Diploma</b>: <strong>Graduate Diploma at IJSE institute</strong> <br/>
   <b>Goal</b>: <em>Cyber security specialist</em> <br/> <br />
 
-  Hope you got to know me ✌️.`;
+  Hope you got to know me ✌️.
+  `;
 
+// On click and event listeners
 aboutMeSuggestion.onclick = aboutMe;
 educationSuggestion.onclick = myEducationDetails;
 projectsSuggestion.onclick = myProjectDetails;
 skillsSuggestion.onclick = mySkills;
 sendBtn.onclick = response;
+
 userInput.addEventListener("keydown", (e) => {
   if (e.key == "Enter") {
     response();
   }
 });
 
+// Utility functions
 let typingTimeouts = [];
-function thinkingResponse(thinkingMsg) {
-  showResultText(thinkingMsg, responseTxt);
+function typeText(element, text, speed = 30) {
+  typingTimeouts.forEach(clearTimeout);
+  typingTimeouts = [];
+
+  element.textContent = "";
+  let i = 0;
+
+  function type() {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      i++;
+      const timeout = setTimeout(type, speed);
+      typingTimeouts.push(timeout);
+    }
+  }
+
+  type();
 }
 
 function showResultText(text, element) {
@@ -78,6 +97,77 @@ function clearElements() {
   heroSection.style.visibility = "hidden";
 }
 
+function showImage(imgUrl) {
+  resultImg.style.visibility = "visible";
+  resultImg.style.opacity = 0;
+  resultImg.style.transform = "translateY(10px)";
+  resultImg.src = imgUrl;
+
+  setTimeout(() => {
+    resultImg.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    resultImg.style.opacity = 1;
+    resultImg.style.transform = "translateY(0)";
+  }, 50);
+}
+
+function thinkingResponse(thinkingMsg) {
+  showResultText(thinkingMsg, responseTxt);
+}
+
+// Response Function
+function response() {
+  clearElements();
+  const msg = userInput.value.toLowerCase();
+
+  if (
+    msg.includes("project") ||
+    msg.includes("work") ||
+    msg.includes("portfolio")
+  ) {
+    myProjectDetails();
+  } else if (
+    msg.includes("skills") ||
+    msg.includes("tricks") ||
+    msg.includes("programming languages") ||
+    msg.includes("abilities") ||
+    msg.includes("types")
+  ) {
+    mySkills();
+  } else if (
+    msg.includes("edu") ||
+    msg.includes("education") ||
+    msg.includes("study") ||
+    msg.includes("university")
+  ) {
+    myEducationDetails();
+  } else if (
+    msg.includes("you") ||
+    msg.includes("yasas banuka") ||
+    msg.includes("yourself") ||
+    msg.includes("personal info") ||
+    msg.includes("who are you")
+  ) {
+    aboutMe();
+  } else if (
+    msg.includes("hey") ||
+    msg.includes("hi") ||
+    msg.includes("sup") ||
+    msg.includes("how are you")
+  ) {
+    showResultText("Hey! How's it going? I'm doing fine btw.", responseTxt);
+  } else {
+    showResultText(
+      "Hey I hope I could respond to your question: " +
+        msg +
+        ", but I'm not an AI robot. I'm Yasas Banuka, merely a student. If you were to ask this irl I might respond. 😉",
+      responseTxt,
+    );
+  }
+
+  userInput.value = "";
+}
+
+// Main functions
 function aboutMe() {
   clearElements();
   thinkingResponse("thinking like a human...");
@@ -153,21 +243,6 @@ function myEducationDetails() {
   }, 2000);
 }
 
-function typeText(element, text, speed = 30) {
-  element.textContent = "";
-  let i = 0;
-
-  function type() {
-    if (i < text.length) {
-      element.textContent += text.charAt(i);
-      i++;
-      setTimeout(type, speed);
-    }
-  }
-
-  type();
-}
-
 function myProjectDetails() {
   clearElements();
   thinkingResponse("Ohh projects...");
@@ -206,69 +281,4 @@ function myProjectDetails() {
       }, 200);
     }, 1500);
   }, 2000);
-}
-
-function showImage(imgUrl) {
-  resultImg.style.visibility = "visible";
-  resultImg.style.opacity = 0;
-  resultImg.style.transform = "translateY(10px)";
-  resultImg.src = imgUrl;
-
-  setTimeout(() => {
-    resultImg.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-    resultImg.style.opacity = 1;
-    resultImg.style.transform = "translateY(0)";
-  }, 50);
-}
-
-function response() {
-  clearElements();
-  const msg = userInput.value.toLowerCase();
-
-  if (
-    msg.includes("project") ||
-    msg.includes("work") ||
-    msg.includes("portfolio")
-  ) {
-    myProjectDetails();
-  } else if (
-    msg.includes("skills") ||
-    msg.includes("tricks") ||
-    msg.includes("programming languages") ||
-    msg.includes("abilities") ||
-    msg.includes("types")
-  ) {
-    mySkills();
-  } else if (
-    msg.includes("edu") ||
-    msg.includes("education") ||
-    msg.includes("study") ||
-    msg.includes("university")
-  ) {
-    myEducationDetails();
-  } else if (
-    msg.includes("you") ||
-    msg.includes("yasas banuka") ||
-    msg.includes("yourself") ||
-    msg.includes("personal info") ||
-    msg.includes("who are you")
-  ) {
-    aboutMe();
-  } else if (
-    msg.includes("hey") ||
-    msg.includes("hi") ||
-    msg.includes("sup") ||
-    msg.includes("how are you")
-  ) {
-    showResultText("Hey! How's it going? I'm doing fine btw.", responseTxt);
-  } else {
-    showResultText(
-      "Hey I hope I could respond to your question: " +
-        msg +
-        ", but I'm not an AI robot. I'm Yasas Banuka, merely a student. If you were to ask this irl I might respond. 😉",
-      responseTxt,
-    );
-  }
-
-  userInput.value = "";
 }
