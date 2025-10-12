@@ -9,9 +9,9 @@
     padding: 3vh 0vw;
     width: 100%;
     scroll-behavior: smooth;
-    max-height: 60vh;
+    max-height: 70vh;
     overflow-y: auto;
-    /*visibility: hidden;*/
+    visibility: hidden;
 }
 
 .skills {
@@ -38,6 +38,8 @@
     background-color: white;
     border-radius: 1.5rem 1.5rem 1.5rem 0rem;
     padding: 1.5rem 2rem;
+    min-width: 199px;
+    max-width: 200px;
 }
 
 .tech-stack > img {
@@ -109,41 +111,47 @@ li {
 }
 
 @media all and (max-width: 1080px) {
+    .skills-section {
+        height: 80vh;
+    }
     .skills {
         width: var(--primary-width-tablet);
         margin: auto;
         display: flex;
         flex-direction: column;
         gap: 5vh;
+        margin-bottom: 1.5rem;
     }
     .tech-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 4vh;
     }
-}
-
-@media all and (max-width: 985px) {
-    .skills-section {
-        max-height: 53vh;
-    }
-    .tech-wrapper {
+    .technology {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 4vh;
+    }
+    .tech-stack {
+        width: fit-content;
+    }
+}
+@media all and (max-width: 978px) {
+    .skills-section {
+        max-height: 60vh;
     }
 }
 
 @media all and (max-width: 576px) {
     .skills-section {
-        max-height: 65vh;
+        max-height: 67vh;
     }
     .tech-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 4vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .technology {
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
     }
 }
