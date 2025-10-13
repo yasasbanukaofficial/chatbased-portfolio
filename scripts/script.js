@@ -316,27 +316,8 @@ function myProjectDetails() {
       projectSection.style.transform = "translateY(50px)";
       projectSection.style.transition =
         "opacity 0.6s ease, transform 0.6s ease-in-out";
-
-      setTimeout(() => {
-        typeText(
-          eliteProject,
-          "Developed a JavaFX based Driving School Management System automating scheduling, enrollment, and payments, boosting efficiency 60% with Hibernate, MySQL, and layered architecture.",
-          50,
-        );
-        typeText(
-          strtgstProject,
-          "AI powered education tracker integrating scheduling, grading, and chat features using JavaFX, MySQL, and Gemini API with a layered architecture for efficiency.",
-          40,
-        );
-        typeText(
-          devobeeProject,
-          "Basic minimalist blog built using pure HTML, CSS and where all the content management is powered by Hugo.",
-          30,
-        );
-
-        projectSection.style.opacity = 1;
-        projectSection.style.transform = "translateY(0)";
-      }, 200);
+      projectSection.style.opacity = 1;
+      projectSection.style.transform = "translateY(0)";
     }, 1500);
   }, 2000);
 }
