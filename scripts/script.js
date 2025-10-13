@@ -189,7 +189,9 @@ async function response() {
           - For questions related to my education use "showEducation" as a response
           - For questions related to my socials use "showSocials" as a response
           - For questions related to my about use "showAbout" as a response
-          - Always keep responses short and simple. (Max 2 sentences which responds to the user's input)
+          - Always keep responses short and simple. (Max 30 words when responding to the user's input)
+          - No need to greet the user, if the user greets then greet them.
+          - Avoid using dashes (-) often since it represents you as an AI. Use when needed.
           - Add some few emojis to enlight the conversation, to show your reaction, but remember to not add much.
 
         Here's the user input: ${msg}
