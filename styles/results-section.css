@@ -24,7 +24,7 @@
     width: 15vw;
     border-radius: 3rem;
     visibility: hidden;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .results p {
@@ -38,6 +38,29 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     line-height: 1.5;
     visibility: hidden;
+}
+
+.results b {
+    background-color: white;
+    color: black;
+}
+
+.socials > img {
+    width: 3.5vh;
+    mix-blend-mode: darken;
+}
+
+.socials {
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.socials strong {
+    background-color: lightpink;
+    color: black;
 }
 
 @media all and (max-width: 1024px) {

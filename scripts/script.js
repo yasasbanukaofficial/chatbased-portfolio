@@ -12,6 +12,7 @@ const aboutMeSuggestion = document.getElementById("about-me");
 const educationSuggestion = document.getElementById("education");
 const projectsSuggestion = document.getElementById("projects");
 const skillsSuggestion = document.getElementById("skills");
+const socialsSuggestion = document.getElementById("socials");
 
 // Project Section
 const projectSection = document.getElementById("projectSection");
@@ -49,11 +50,51 @@ const educationDetails = `
   Hope you got to know my education status ✌️.
   `;
 
+const socialLogo = "./assets/img/gojo-meme.gif";
+const socialDetails = `
+  These are my socials, <br /> <strong>Check those out.</strong> <br/> <br />
+  <a href="https://github.com/yasasbanukaofficial">
+    <div class="socials">
+      <img
+          src="./assets/img/github-logo-2.gif"
+          alt="web-logo-animated"
+      />
+      <strong>
+        @yasasbanukaofficial
+      </strong>
+    </div>
+  </a>
+  <a href="https://www.linkedin.com/in/yasasbanukagunasena/">
+    <div class="socials">
+    <img
+        src="./assets/img/linkedin-logo.gif"
+        alt="linkedin-logo-animated"
+    />
+    <strong>
+      @yasasbanukagunasena
+    </strong>
+    </div>
+  </a>
+  <a href="https://medium.com/@banuofficial">
+  <div class="socials">
+    <img
+        src="./assets/img/medium-logo.gif"
+        alt="medium-logo-animated"
+    />
+    <strong>
+      @banuofficial
+    </strong>
+    </div>
+  </a> <br />
+  I <em>create</em> and <em>write</em> amazing stuff over there.
+  `;
+
 // On click and event listeners
 aboutMeSuggestion.onclick = aboutMe;
 educationSuggestion.onclick = myEducationDetails;
 projectsSuggestion.onclick = myProjectDetails;
 skillsSuggestion.onclick = mySkills;
+socialsSuggestion.onclick = mySocials;
 sendBtn.onclick = response;
 
 userInput.addEventListener("keydown", (e) => {
@@ -125,6 +166,17 @@ function response() {
     msg.includes("portfolio")
   ) {
     myProjectDetails();
+  } else if (
+    msg.includes("socials") ||
+    msg.includes("tags") ||
+    msg.includes("handles") ||
+    msg.includes("social media") ||
+    msg.includes("internet profiles") ||
+    msg.includes("github") ||
+    msg.includes("medium") ||
+    msg.includes("linkedin")
+  ) {
+    mySocials();
   } else if (
     msg.includes("skills") ||
     msg.includes("tricks") ||
@@ -233,6 +285,8 @@ function myEducationDetails() {
       resultTxt.style.transform = "translateY(30px)";
       resultTxt.style.transition = "opacity 0.6s ease, transform 0.6s ease";
 
+      resultImg.style.objectFit = "contain";
+
       setTimeout(() => {
         resultTxt.style.opacity = 1;
         resultTxt.style.transform = "translateY(0)";
@@ -279,6 +333,33 @@ function myProjectDetails() {
         projectSection.style.opacity = 1;
         projectSection.style.transform = "translateY(0)";
       }, 200);
+    }, 1500);
+  }, 2000);
+}
+
+function mySocials() {
+  clearElements();
+  thinkingResponse("searching socials...");
+
+  setTimeout(() => {
+    thinkingResponse("Found Results ✔️");
+
+    setTimeout(() => {
+      clearElements();
+      resultTxt.innerHTML = socialDetails;
+      resultTxt.style.visibility = "visible";
+      resultTxt.style.opacity = 0;
+      resultTxt.style.transform = "translateY(30px)";
+      resultTxt.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+
+      resultImg.style.objectFit = "cover";
+
+      setTimeout(() => {
+        resultTxt.style.opacity = 1;
+        resultTxt.style.transform = "translateY(0)";
+      }, 100);
+
+      showImage(socialLogo);
     }, 1500);
   }, 2000);
 }
