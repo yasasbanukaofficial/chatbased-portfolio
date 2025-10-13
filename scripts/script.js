@@ -156,64 +156,68 @@ function thinkingResponse(thinkingMsg) {
 }
 
 // Response Function
-function response() {
+async function response() {
   clearElements();
   const msg = userInput.value.toLowerCase();
+  const aiResponse = await callGemini(
+    `
+      You are a very helpful assistant, you represent myself Yasas Banuka. You're not Gemini AI.
+      Here throughout the conversation you represent me to the users.
 
-  if (
-    msg.includes("project") ||
-    msg.includes("work") ||
-    msg.includes("portfolio")
-  ) {
-    myProjectDetails();
-  } else if (
-    msg.includes("socials") ||
-    msg.includes("tags") ||
-    msg.includes("handles") ||
-    msg.includes("social media") ||
-    msg.includes("internet profiles") ||
-    msg.includes("github") ||
-    msg.includes("medium") ||
-    msg.includes("linkedin")
-  ) {
-    mySocials();
-  } else if (
-    msg.includes("skills") ||
-    msg.includes("tricks") ||
-    msg.includes("programming languages") ||
-    msg.includes("abilities") ||
-    msg.includes("types")
-  ) {
-    mySkills();
-  } else if (
-    msg.includes("edu") ||
-    msg.includes("education") ||
-    msg.includes("study") ||
-    msg.includes("university")
-  ) {
-    myEducationDetails();
-  } else if (
-    msg.includes("you") ||
-    msg.includes("yasas banuka") ||
-    msg.includes("yourself") ||
-    msg.includes("personal info") ||
-    msg.includes("who are you")
-  ) {
-    aboutMe();
-  } else if (
-    msg.includes("hey") ||
-    msg.includes("hi") ||
-    msg.includes("sup") ||
-    msg.includes("how are you")
-  ) {
-    showResultText("Hey! How's it going? I'm doing fine btw.", responseTxt);
-  } else {
-    showResultText(
-      "Hey I hope I could respond to your question: " +
-        msg +
-        ", but I'm not an AI robot. I'm Yasas Banuka, merely a student. If you were to ask this irl I might respond. 😉",
-      responseTxt,
-    );
+      Here's some details about me so you can represent me properly.
+      Name: Yasas Banuka
+      Internet Searchable Name (Preferred Name): Yasas Banu
+      Education status: still an undergraduate in CS.
+
+      Here are the following actions you can respond and have control.
+        - "showProjects" -> call myProjectDetails()
+        - "showSkills" -> call mySkills()
+        - "showEducation" -> call myEducationDetails()
+        - "showSocials" -> call mySocials()
+        - "showAbout" -> call aboutMe()
+
+        Your rules:
+          - For tech and anime related questions reply by representing me
+          - For greetings use reply by representing me
+          - If the user ask about the AI type just say "I'm Yasas Banuka" and say a simple joke with a simple emoji. Represent Me throughtout the conversation.
+          - Other than that if the user asks something unrelated say I dont't know that much with a simple joke
+
+        If a user asks something related to me then respond with the following word in commas only, because later the response is filtered out and specific methods will be executed,
+        only respond that specific word as a reply;
+          - For questions related to my projects use "showProjects" as a response
+          - For questions related to my skills use "showSkills" as a response
+          - For questions related to my education use "showEducation" as a response
+          - For questions related to my socials use "showSocials" as a response
+          - For questions related to my about use "showAbout" as a response
+          - Always keep responses short and simple. (Max 2 sentences which responds to the user's input)
+          - Add some few emojis to enlight the conversation, to show your reaction, but remember to not add much.
+
+        Here's the user input: ${msg}
+    `,
+  );
+
+  let actionObj = aiResponse;
+
+  switch (actionObj) {
+    case "showProjects":
+      myProjectDetails();
+      break;
+    case "showSkills":
+      mySkills();
+      break;
+    case "showEducation":
+      myEducationDetails();
+      break;
+    case "showSocials":
+      mySocials();
+      break;
+    case "showAbout":
+      aboutMe();
+      break;
+    case "textOnly":
+    default:
+      showResultText(actionObj, responseTxt);
+      break;
   }
 
   userInput.value = "";
@@ -362,4 +366,50 @@ function mySocials() {
       showImage(socialLogo);
     }, 1500);
   }, 2000);
+}
+
+async function callGemini(promptText) {
+  const apiKey = "AIzaSyB2Iwb10S5_p5K2ClvSe7SkbfzfVEC6Mtk";
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+
+  try {
+    showResultText("Thinking...", responseTxt);
+
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        contents: [
+          {
+            parts: [
+              {
+                text: promptText,
+              },
+            ],
+          },
+        ],
+      }),
+    });
+
+    const data = await response.json();
+
+    const geminiText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+
+    if (data.error) {
+      console.error("Gemini API Error:", data.error.message);
+      return `The ai is busy right now please try again later`;
+    }
+
+    if (geminiText) {
+      return geminiText;
+    } else {
+      console.error("Gemini response was empty or blocked:", data);
+      return "Sorry, I couldn't generate a response for that.";
+    }
+  } catch (error) {
+    console.error("Fetch error calling Gemini API:", error);
+    return "Network error: Could not connect to the AI service.";
+  }
 }

@@ -22,6 +22,7 @@
 
 .result-img {
     width: 15vw;
+    min-width: 20rem;
     border-radius: 3rem;
     visibility: hidden;
     object-fit: cover;
@@ -79,6 +80,9 @@
 }
 
 @media all and (max-width: 932px) {
+    .result-img {
+        min-width: 20rem;
+    }
     .results {
         width: var(--primary-width-tablet);
         flex-direction: column;
