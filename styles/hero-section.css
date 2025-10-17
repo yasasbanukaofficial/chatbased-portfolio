@@ -69,7 +69,7 @@ strong::selection {
     background-color: white;
     margin-right: 2rem;
 
-    animation: rotate 10s infinite alternate ease-in-out;
+    animation: spin 3s infinite alternate ease-in-out;
 }
 
 @keyframes spin {
@@ -78,7 +78,7 @@ strong::selection {
     }
 
     to {
-        transform: rotate(740deg);
+        transform: rotate(180deg);
     }
 }
 
