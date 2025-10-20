@@ -36,6 +36,7 @@
 
 body {
     background-color: var(--color-surface);
+    overscroll-behavior-y: contain;
 }
 
 em {
