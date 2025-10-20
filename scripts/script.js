@@ -13,13 +13,15 @@ const educationSuggestion = document.getElementById("education");
 const projectsSuggestion = document.getElementById("projects");
 const skillsSuggestion = document.getElementById("skills");
 const socialsSuggestion = document.getElementById("socials");
+const gallerySuggestion = document.getElementById("gallery");
 
-// Project Section
+// Sections
 const projectSection = document.getElementById("projectSection");
 const eliteProject = document.getElementById("eliteProject");
 const skillSection = document.getElementById("skillSection");
 const heroSection = document.getElementById("heroSection");
 const strtgstProject = document.getElementById("strtgstProject");
+const gallerySection = document.getElementById("gallerySection");
 const devobeeProject = document.getElementById("devobeeProject");
 
 const current_yr = new Date().getFullYear();
@@ -107,6 +109,7 @@ educationSuggestion.onclick = myEducationDetails;
 projectsSuggestion.onclick = myProjectDetails;
 skillsSuggestion.onclick = mySkills;
 socialsSuggestion.onclick = mySocials;
+gallerySuggestion.onclick = myGallery;
 sendBtn.onclick = response;
 
 userInput.addEventListener("keydown", (e) => {
@@ -148,6 +151,7 @@ function clearElements() {
   projectSection.style.visibility = "hidden";
   skillSection.style.visibility = "hidden";
   heroSection.style.visibility = "hidden";
+  gallerySection.style.visibility = "hidden";
 }
 
 function showImage(imgUrl) {
@@ -189,6 +193,7 @@ async function response() {
         - "showEducation" -> call myEducationDetails()
         - "showSocials" -> call mySocials()
         - "showAbout" -> call aboutMe()
+        - "showGallery -> call myGallery()
 
         Your rules:
           - For tech and anime related questions reply by representing me
@@ -203,6 +208,7 @@ async function response() {
           - For questions related to my education use "showEducation" as a response
           - For questions related to my socials use "showSocials" as a response
           - For questions related to my about use "showAbout" as a response
+          - For questions related to my about use "showGallery" as a response
           - Always keep responses short and simple. (Max 30 words when responding to the user's input)
           - No need to greet the user, if the user greets then greet them.
           - Avoid using dashes (-) often since it represents you as an AI. Use when needed.
@@ -229,6 +235,9 @@ async function response() {
       break;
     case "showAbout":
       aboutMe();
+      break;
+    case "showGallery":
+      myGallery();
       break;
     case "textOnly":
     default:
@@ -359,6 +368,27 @@ function mySocials() {
       }, 100);
 
       showImage(socialLogo);
+    }, 1500);
+  }, 2000);
+}
+
+function myGallery() {
+  clearElements();
+  thinkingResponse("time to revive the archive...");
+
+  setTimeout(() => {
+    thinkingResponse("Check these out 📸");
+
+    setTimeout(() => {
+      clearElements();
+
+      gallerySection.style.visibility = "visible";
+      gallerySection.style.opacity = 0;
+      gallerySection.style.transform = "translateY(50px)";
+      gallerySection.style.transition =
+        "opacity 0.6s ease, transform 0.6s ease-in-out";
+      gallerySection.style.opacity = 1;
+      gallerySection.style.transform = "translateY(0)";
     }, 1500);
   }, 2000);
 }
