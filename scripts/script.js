@@ -22,7 +22,8 @@ const heroSection = document.getElementById("heroSection");
 const strtgstProject = document.getElementById("strtgstProject");
 const devobeeProject = document.getElementById("devobeeProject");
 
-const age = new Date().getFullYear() - 2007;
+const current_yr = new Date().getFullYear();
+const age = current_yr - 2007;
 
 // Results
 const myImgUrl = "./assets/img/yasas-banuka.jpg";
@@ -56,8 +57,8 @@ const socialDetails = `
   <a href="https://github.com/yasasbanukaofficial">
     <div class="socials">
       <img
-          src="./assets/img/github-logo-2.gif"
-          alt="web-logo-animated"
+          src="./assets/img/github-logo.png"
+          alt="web-logo"
       />
       <strong>
         @yasasbanukaofficial
@@ -67,8 +68,8 @@ const socialDetails = `
   <a href="https://www.linkedin.com/in/yasasbanukagunasena/">
     <div class="socials">
     <img
-        src="./assets/img/linkedin-logo.gif"
-        alt="linkedin-logo-animated"
+        src="./assets/img/linkedin-logo.png"
+        alt="linkedin-logo"
     />
     <strong>
       @yasasbanukagunasena
@@ -78,8 +79,19 @@ const socialDetails = `
   <a href="https://medium.com/@banuofficial">
   <div class="socials">
     <img
-        src="./assets/img/medium-logo.gif"
-        alt="medium-logo-animated"
+        src="./assets/img/medium-logo.png"
+        alt="medium-logo"
+    />
+    <strong>
+      @banuofficial
+    </strong>
+    </div>
+  </a>
+  <a href="https://dev.to/banuofficial">
+  <div class="socials">
+    <img
+        src="./assets/img/dev-logo.png"
+        alt="dev-logo"
     />
     <strong>
       @banuofficial
@@ -159,15 +171,17 @@ function thinkingResponse(thinkingMsg) {
 async function response() {
   clearElements();
   const msg = userInput.value.toLowerCase();
+  userInput.value = "";
   const aiResponse = await callGemini(
     `
       You are a very helpful assistant, you represent myself Yasas Banuka. You're not Gemini AI.
       Here throughout the conversation you represent me to the users.
 
-      Here's some details about me so you can represent me properly.
+      Here's some details about me and other stuff which are important, so you can represent me properly.
       Name: Yasas Banuka
       Internet Searchable Name (Preferred Name): Yasas Banu
       Education status: still an undergraduate in CS.
+      Current Year: ${current_yr}.
 
       Here are the following actions you can respond and have control.
         - "showProjects" -> call myProjectDetails()
@@ -179,7 +193,7 @@ async function response() {
         Your rules:
           - For tech and anime related questions reply by representing me
           - For greetings use reply by representing me
-          - If the user ask about the AI type just say "I'm Yasas Banuka" and say a simple joke with a simple emoji. Represent Me throughtout the conversation.
+          - If the user ask about the AI which powers this conversation, or what type of ai are you, just say "I'm Yasas Banuka, not an AI" or something related and say a good excuse with a simple emoji. Represent Me throughtout the conversation.
           - Other than that if the user asks something unrelated say I dont't know that much with a simple joke
 
         If a user asks something related to me then respond with the following word in commas only, because later the response is filtered out and specific methods will be executed,
@@ -221,8 +235,6 @@ async function response() {
       showResultText(actionObj, responseTxt);
       break;
   }
-
-  userInput.value = "";
 }
 
 // Main functions
