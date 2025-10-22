@@ -17,12 +17,15 @@ const gallerySuggestion = document.getElementById("gallery");
 
 // Sections
 const projectSection = document.getElementById("projectSection");
-const eliteProject = document.getElementById("eliteProject");
 const skillSection = document.getElementById("skillSection");
 const heroSection = document.getElementById("heroSection");
-const strtgstProject = document.getElementById("strtgstProject");
 const gallerySection = document.getElementById("gallerySection");
+const assignmentSection = document.getElementById("assignmentSection");
+
+// Related to project section
 const devobeeProject = document.getElementById("devobeeProject");
+const strtgstProject = document.getElementById("strtgstProject");
+const eliteProject = document.getElementById("eliteProject");
 
 const current_yr = new Date().getFullYear();
 const age = current_yr - 2007;
@@ -193,7 +196,8 @@ async function response() {
         - "showEducation" -> call myEducationDetails()
         - "showSocials" -> call mySocials()
         - "showAbout" -> call aboutMe()
-        - "showGallery -> call myGallery()
+        - "showGallery" -> call myGallery()
+        - "showAssignments" -> call myAssignments()
 
         Your rules:
           - For tech and anime related questions reply by representing me
@@ -208,7 +212,8 @@ async function response() {
           - For questions related to my education use "showEducation" as a response
           - For questions related to my socials use "showSocials" as a response
           - For questions related to my about use "showAbout" as a response
-          - For questions related to my about use "showGallery" as a response
+          - For questions related to my pictures/gallery use "showGallery" as a response
+          - For questions related to my assignments use "showAssignments" as a response
           - Always keep responses short and simple. (Max 30 words when responding to the user's input)
           - No need to greet the user, if the user greets then greet them.
           - Avoid using dashes (-) often since it represents you as an AI. Use when needed.
@@ -238,6 +243,9 @@ async function response() {
       break;
     case "showGallery":
       myGallery();
+      break;
+    case "showAssignments":
+      myAssignments();
       break;
     case "textOnly":
     default:
@@ -389,6 +397,30 @@ function myGallery() {
         "opacity 0.6s ease, transform 0.6s ease-in-out";
       gallerySection.style.opacity = 1;
       gallerySection.style.transform = "translateY(0)";
+    }, 1500);
+  }, 2000);
+}
+
+function myAssignments() {
+  clearElements();
+  thinkingResponse("ohh assignments...");
+
+  setTimeout(() => {
+    thinkingResponse("Loaded assignments ✔️");
+
+    setTimeout(() => {
+      clearElements();
+
+      assignmentSection.style.visibility = "visible";
+      assignmentSection.style.opacity = 0;
+      assignmentSection.style.transform = "translateY(50px)";
+      assignmentSection.style.transition =
+        "opacity 0.6s ease, transform 0.6s ease-in-out";
+
+      setTimeout(() => {
+        assignmentSection.style.opacity = 1;
+        assignmentSection.style.transform = "translateY(0)";
+      }, 200);
     }, 1500);
   }, 2000);
 }
