@@ -1,0 +1,95 @@
+.assignment-section {
+    position: fixed;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    padding: 3vh 0vw;
+    width: 100%;
+    scroll-behavior: smooth;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.assignments {
+    width: var(--primary-width-desktop);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.assignment-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2vh;
+}
+
+.card {
+    width: 20vw;
+    min-height: 200px;
+    height: fit-content;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 5px 1px lightgrey;
+    text-align: left;
+    gap: 2vh;
+
+    display: flex;
+    flex-direction: column;
+    cursor: grab;
+}
+
+.card img {
+    border-radius: 2rem 2rem 0 0;
+    aspect-ratio: 3/1;
+    object-fit: cover;
+}
+
+.card ul {
+    margin: 1vh 0 0 0;
+    display: flex;
+}
+
+.card li {
+    background-color: lightpink;
+    padding: 2px 10px;
+    list-style: none;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    margin-top: 10px;
+}
+
+.card-details h3,
+.card-details p,
+ul {
+    margin: 0;
+    padding-left: 1rem;
+    line-height: 2vh;
+}
+
+.card-details button {
+    width: inherit;
+    margin: 1vh 1vh 2vh 1vh;
+    height: 4vh;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--color-neutral-900);
+    opacity: 0.8;
+    color: var(--color-surface-0);
+    font-family: var(--font-family-caption);
+    font-weight: var(--font-weight-bold);
+
+    cursor: pointer;
+}
