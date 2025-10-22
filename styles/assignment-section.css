@@ -47,8 +47,10 @@
     cursor: grab;
 }
 
+.card video,
 .card img {
-    border-radius: 2rem 2rem 0 0;
+    border-radius: 1rem 1rem 0 0;
+    border: none;
     aspect-ratio: 3/1;
     object-fit: cover;
 }
@@ -75,12 +77,12 @@
 .card-details p,
 ul {
     margin: 0;
-    padding-left: 1rem;
+    padding: 0rem 1rem;
     line-height: 2vh;
 }
 
 .card-details button {
-    width: inherit;
+    width: 95%;
     margin: 1vh 1vh 2vh 1vh;
     height: 4vh;
     border-radius: 0.5rem;
@@ -90,6 +92,8 @@ ul {
     color: var(--color-surface-0);
     font-family: var(--font-family-caption);
     font-weight: var(--font-weight-bold);
-
     cursor: pointer;
+}
+
+.card-details a {
 }
