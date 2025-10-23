@@ -155,6 +155,7 @@ function clearElements() {
   skillSection.style.visibility = "hidden";
   heroSection.style.visibility = "hidden";
   gallerySection.style.visibility = "hidden";
+  assignmentSection.style.visibility = "hidden";
 }
 
 function showImage(imgUrl) {
