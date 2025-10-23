@@ -95,14 +95,6 @@ ul {
     width: 95%;
     margin: 1vh 1vh 2vh 1vh;
     height: 4vh;
-    border-radius: 0.5rem;
-    border: none;
-    background-color: var(--color-neutral-900);
-    opacity: 0.8;
-    color: var(--color-surface-0);
-    font-family: var(--font-family-caption);
-    font-weight: var(--font-weight-bold);
-    cursor: pointer;
 }
 
 @media all and (max-width: 1080px) {

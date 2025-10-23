@@ -84,6 +84,7 @@ a {
     color: black;
     text-decoration: none;
 }
+
 input,
 input:focus,
 textarea:focus,
@@ -93,4 +94,22 @@ select:focus {
     outline: none;
     box-shadow: none;
     font-family: var(--font-family-base);
+}
+
+button {
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--color-neutral-900);
+    opacity: 0.8;
+    color: var(--color-surface-0);
+    font-family: var(--font-family-caption);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+}
+
+button:hover {
+    border: 1px solid var(--color-neutral-900);
+    color: var(--color-neutral-900);
+    background-color: var(--color-surface-100);
+    transition: 200ms ease-in;
 }

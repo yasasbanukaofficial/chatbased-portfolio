@@ -55,6 +55,11 @@ h3 {
     text-align: left;
 }
 
+.project-details button {
+    width: 16vw;
+    height: 2.5vw;
+}
+
 @media all and (max-width: 1080px) {
     .projects {
         flex-direction: column;
@@ -77,6 +82,11 @@ h3 {
     .project-text {
         margin: 0 15%;
     }
+
+    .project-details button {
+        width: 35vw;
+        height: 5vw;
+    }
 }
 
 @media all and (max-width: 576px) {
@@ -98,5 +108,10 @@ h3 {
         font-size: 1rem;
         line-height: 1.7rem;
         margin: 0 4.5vw;
+    }
+
+    .project-details button {
+        width: 12rem;
+        height: 2rem;
     }
 }
