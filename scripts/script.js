@@ -31,7 +31,7 @@ const current_yr = new Date().getFullYear();
 const age = current_yr - 2007;
 
 // Results
-const myImgUrl = "./assets/img/yasas-banuka.jpg";
+const myImgUrl = "./assets/media/yasas-banuka.jpg";
 const myDetails = `Hi I'm Yasas Banuka, a <em>tech nerd</em>,
   <strong>creative developer</strong> who loves to
   create "<em>unique</em>" solutions that attract
@@ -44,7 +44,7 @@ const myDetails = `Hi I'm Yasas Banuka, a <em>tech nerd</em>,
 
   Hope you got to know me ✌️.`;
 
-const educationLogo = "./assets/img/ijse-logo.png";
+const educationLogo = "./assets/media/ijse-logo.png";
 const educationDetails = `
   I'm currently pursuing a <b>graduate diploma</b> in software engineering.<br /> <br />
   I <em>hope</em> to pursue a career in both <strong>software engineering</strong> and <strong>cyber security engineering</strong> which is <em>hard</em> but I'm <strong>determined</strong>
@@ -56,13 +56,13 @@ const educationDetails = `
   Hope you got to know my education status ✌️.
   `;
 
-const socialLogo = "./assets/img/gojo-meme.gif";
+const socialLogo = "./assets/media/gojo-meme.gif";
 const socialDetails = `
   These are my socials, <br /> <strong>Check those out.</strong> <br/> <br />
   <a href="https://github.com/yasasbanukaofficial">
     <div class="socials">
       <img
-          src="./assets/img/github-logo.png"
+          src="./assets/media/github-logo.png"
           alt="web-logo"
       />
       <strong>
@@ -73,7 +73,7 @@ const socialDetails = `
   <a href="https://www.linkedin.com/in/yasasbanukagunasena/">
     <div class="socials">
     <img
-        src="./assets/img/linkedin-logo.png"
+        src="./assets/media/linkedin-logo.png"
         alt="linkedin-logo"
     />
     <strong>
@@ -84,7 +84,7 @@ const socialDetails = `
   <a href="https://medium.com/@banuofficial">
   <div class="socials">
     <img
-        src="./assets/img/medium-logo.png"
+        src="./assets/media/medium-logo.png"
         alt="medium-logo"
     />
     <strong>
@@ -95,7 +95,7 @@ const socialDetails = `
   <a href="https://dev.to/banuofficial">
   <div class="socials">
     <img
-        src="./assets/img/dev-logo.png"
+        src="./assets/media/dev-logo.png"
         alt="dev-logo"
     />
     <strong>
