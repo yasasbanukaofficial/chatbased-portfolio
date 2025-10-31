@@ -1,624 +1,551 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-            name="description"
-            content="Sup, I am Yasas Banu and welcome to my personal portfolio. I am a tech nerd who loves to experiment new technologies, one at a time."
-        />
-        <link
-            rel="icon"
-            type="image/x-icon"
-            href="./assets/media/decent-pfp.ico"
-        />
-        <meta name="author" content="Yasas Banuka" />
-        <meta
-            name="keyword"
-            content="yasas banu, yasas, banuka, banu, yasas banuka official, portfolio, personal portfolio"
-        />
-        <link rel="stylesheet" href="./assets/lib/normalize.css" />
-        <link
-            rel="stylesheet"
-            href="./assets/lib/fontawesome/css/all.min.css"
-        />
-        <link rel="stylesheet" href="./styles/global.css" />
-        <link rel="stylesheet" href="./styles/header.css" />
-        <link rel="stylesheet" href="./styles/chat-section.css" />
-        <link rel="stylesheet" href="./styles/hero-section.css" />
-        <link rel="stylesheet" href="./styles/results-section.css" />
-        <link rel="stylesheet" href="./styles/skills-section.css" />
-        <link rel="stylesheet" href="./styles/projects-section.css" />
-        <link rel="stylesheet" href="./styles/gallery-section.css" />
-        <link rel="stylesheet" href="./styles/assignment-section.css" />
-        <link rel="stylesheet" href="./styles/response-container.css" />
-        <title>Banu.</title>
-    </head>
-    <body>
-        <main>
-            <header>
-                <a href="./"><h1>banu.</h1></a>
-                <a href="./"> <i class="fa-regular fa-house fa-2xl"></i></a>
-            </header>
-            <section class="hero" id="heroSection">
-                <div class="hero-details">
-                    <p>
-                        I'm <strong>Yasas Banuka</strong> <br />
-                        I create <strong>smart</strong> solutions to problems.
-                    </p>
-                    <p>Student・Tech Nerd・Minimalist</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sup, I am Yasas Banu and welcome to my personal portfolio. I am a tech nerd who loves to experiment new technologies, one at a time."
+    />
+    <link rel="icon" type="image/x-icon" href="./assets/media/decent-pfp.ico" />
+    <meta name="author" content="Yasas Banuka" />
+    <meta
+      name="keyword"
+      content="yasas banu, yasas, banuka, banu, yasas banuka official, portfolio, personal portfolio"
+    />
+    <link rel="stylesheet" href="./assets/lib/normalize.css" />
+    <link rel="stylesheet" href="./assets/lib/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/chat-section.css" />
+    <link rel="stylesheet" href="./styles/hero-section.css" />
+    <link rel="stylesheet" href="./styles/results-section.css" />
+    <link rel="stylesheet" href="./styles/skills-section.css" />
+    <link rel="stylesheet" href="./styles/projects-section.css" />
+    <link rel="stylesheet" href="./styles/gallery-section.css" />
+    <link rel="stylesheet" href="./styles/assignment-section.css" />
+    <link rel="stylesheet" href="./styles/response-container.css" />
+    <title>Banu.</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <a href="./"><h1>banu.</h1></a>
+        <a href="./"> <i class="fa-regular fa-house fa-2xl"></i></a>
+      </header>
+      <section class="hero" id="heroSection">
+        <div class="hero-details">
+          <p>
+            I'm <strong>Yasas Banuka</strong> <br />
+            I create <strong>smart</strong> solutions to problems.
+          </p>
+          <p>Student・Tech Nerd・Minimalist</p>
+        </div>
+        <div class="hero-circle-container">
+          <div class="circle circle-container circle-red">
+            <div class="circle circle-container circle-white">
+              <div class="circle circle-black"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--AI thinking UI-->
+      <section class="response-container">
+        <p id="responseTxt"></p>
+      </section>
+      <section class="results-container">
+        <div class="results">
+          <img src="" alt="result-img" class="result-img" id="resultImg" />
+          <div>
+            <p id="resultTxt"></p>
+          </div>
+        </div>
+      </section>
+      <section class="projects-section" id="projectSection">
+        <div class="projects">
+          <div class="project-details">
+            <img
+              src="./assets/media/devobee-logo.png"
+              alt=""
+              class="project-img"
+            />
+            <h3>DevoBee - the minimalist dev blog</h3>
+            <p class="project-text" id="devobeeProject">
+              Basic minimalist blog built using pure HTML, CSS and where all the
+              content management is powered by Hugo.
+            </p>
+            <a href="https://github.com/yasasbanukaofficial/devobee">
+              <button>Visit</button>
+            </a>
+          </div>
+          <div class="project-details">
+            <img
+              src="./assets/media/elite-logo.png"
+              alt=""
+              class="project-img"
+            />
+            <h3>Elite - Driving School Management System.</h3>
+            <p class="project-text" id="eliteProject">
+              Developed a JavaFX based Driving School Management System
+              automating scheduling, enrollment, and payments, boosting
+              efficiency 60% with Hibernate, MySQL, and layered architecture.
+            </p>
+            <a
+              href="https://github.com/yasasbanukaofficial/elite-learners-system"
+            >
+              <button>Visit</button>
+            </a>
+          </div>
+          <div class="project-details">
+            <img
+              src="./assets/media/strtgst-logo.png"
+              alt=""
+              class="project-img"
+            />
+            <h3>Strtgst - Education Tracker AI powered.</h3>
+            <p class="project-text" id="strtgstProject">
+              AI powered education tracker integrating scheduling, grading, and
+              chat features using JavaFX, MySQL, and Gemini API with a layered
+              architecture for efficiency.
+            </p>
+            <a
+              href="https://github.com/yasasbanukaofficial/strtgst-layered-architecture"
+            >
+              <button>Visit</button>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="skills-section" id="skillSection">
+        <div class="skills">
+          <h3>Here are some skills that I know</h3>
+          <div class="tech-wrapper">
+            <div class="frontend">
+              <h4>Frontend & UI Design</h4>
+              <div class="technology">
+                <div class="tech-stack">
+                  <img src="./assets/media/html-logo.png" alt="html-logo" />
+                  <p>HTML</p>
                 </div>
-                <div class="hero-circle-container">
-                    <div class="circle circle-container circle-red">
-                        <div class="circle circle-container circle-white">
-                            <div class="circle circle-black"></div>
-                        </div>
-                    </div>
+                <div class="tech-stack">
+                  <img src="./assets/media/css-logo.png" alt="css-logo" />
+                  <p>CSS</p>
                 </div>
-            </section>
-            <!--AI thinking UI-->
-            <section class="response-container">
-                <p id="responseTxt"></p>
-            </section>
-            <section class="results-container">
-                <div class="results">
-                    <img
-                        src=""
-                        alt="result-img"
-                        class="result-img"
-                        id="resultImg"
-                    />
-                    <div>
-                        <p id="resultTxt"></p>
-                    </div>
+                <div class="tech-stack">
+                  <img src="./assets/media/js-logo.png" alt="js-logo" />
+                  <p>JavaScript</p>
                 </div>
-            </section>
-            <section class="projects-section" id="projectSection">
-                <div class="projects">
-                    <div class="project-details">
-                        <img
-                            src="./assets/media/devobee-logo.png"
-                            alt=""
-                            class="project-img"
-                        />
-                        <h3>DevoBee - the minimalist dev blog</h3>
-                        <p class="project-text" id="devobeeProject">
-                            Basic minimalist blog built using pure HTML, CSS and
-                            where all the content management is powered by Hugo.
-                        </p>
-                        <a
-                            href="https://github.com/yasasbanukaofficial/devobee"
-                        >
-                            <button>Visit</button>
-                        </a>
-                    </div>
-                    <div class="project-details">
-                        <img
-                            src="./assets/media/elite-logo.png"
-                            alt=""
-                            class="project-img"
-                        />
-                        <h3>Elite - Driving School Management System.</h3>
-                        <p class="project-text" id="eliteProject">
-                            Developed a JavaFX based Driving School Management
-                            System automating scheduling, enrollment, and
-                            payments, boosting efficiency 60% with Hibernate,
-                            MySQL, and layered architecture.
-                        </p>
-                        <a
-                            href="https://github.com/yasasbanukaofficial/elite-learners-system"
-                        >
-                            <button>Visit</button>
-                        </a>
-                    </div>
-                    <div class="project-details">
-                        <img
-                            src="./assets/media/strtgst-logo.png"
-                            alt=""
-                            class="project-img"
-                        />
-                        <h3>Strtgst - Education Tracker AI powered.</h3>
-                        <p class="project-text" id="strtgstProject">
-                            AI powered education tracker integrating scheduling,
-                            grading, and chat features using JavaFX, MySQL, and
-                            Gemini API with a layered architecture for
-                            efficiency.
-                        </p>
-                        <a
-                            href="https://github.com/yasasbanukaofficial/strtgst-layered-architecture"
-                        >
-                            <button>Visit</button>
-                        </a>
-                    </div>
+                <div class="tech-stack">
+                  <img src="./assets/media/figma-logo.png" alt="figma-logo" />
+                  <p>Figma</p>
                 </div>
-            </section>
-            <section class="skills-section" id="skillSection">
-                <div class="skills">
-                    <h3>Here are some skills that I know</h3>
-                    <div class="tech-wrapper">
-                        <div class="frontend">
-                            <h4>Frontend & UI Design</h4>
-                            <div class="technology">
-                                <div class="tech-stack">
-                                    <img
-                                        src="./assets/media/html-logo.png"
-                                        alt="html-logo"
-                                    />
-                                    <p>HTML</p>
-                                </div>
-                                <div class="tech-stack">
-                                    <img
-                                        src="./assets/media/css-logo.png"
-                                        alt="css-logo"
-                                    />
-                                    <p>CSS</p>
-                                </div>
-                                <div class="tech-stack">
-                                    <img
-                                        src="./assets/media/js-logo.png"
-                                        alt="js-logo"
-                                    />
-                                    <p>JavaScript</p>
-                                </div>
-                                <div class="tech-stack">
-                                    <img
-                                        src="./assets/media/figma-logo.png"
-                                        alt="figma-logo"
-                                    />
-                                    <p>Figma</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backend">
-                            <h4>Backend</h4>
-                            <div class="technology">
-                                <div class="tech-stack">
-                                    <img
-                                        src="./assets/media/java-logo.png"
-                                        alt="java-logo"
-                                    />
-                                    <p>Java</p>
-                                </div>
-                                <div class="tech-stack">
-                                    <img
-                                        src="./assets/media/python-logo.png"
-                                        alt="python-logo"
-                                    />
-                                    <p>Python</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="db">
-                            <h4>Database</h4>
-                            <div class="technology">
-                                <div class="tech-stack">
-                                    <img
-                                        src="./assets/media/mongodb-logo.png"
-                                        alt="mongodb-logo"
-                                    />
-                                    <p>MongoDB</p>
-                                </div>
-                                <div class="tech-stack">
-                                    <img
-                                        src="./assets/media/mysql-logo.png"
-                                        alt="mysql-logo"
-                                    />
-                                    <p>MySQL</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="frameworks">
-                            <h4>Frameworks & Technologies</h4>
-                            <div class="technology">
-                                <div class="tech-stack">
-                                    <img
-                                        src="./assets/media/tailwind-logo.png"
-                                        alt="tailwind-logo"
-                                    />
-                                    <p>Tailwind</p>
-                                </div>
-                                <div class="tech-stack">
-                                    <img
-                                        src="./assets/media/bootstrap-logo.png"
-                                        alt="bootstrap-logo"
-                                    />
-                                    <p>Bootstrap</p>
-                                </div>
-                                <div class="tech-stack">
-                                    <img
-                                        src="./assets/media/jquery-logo.png"
-                                        alt="jquery-logo"
-                                    />
-                                    <p>JQuery</p>
-                                </div>
-                                <div class="tech-stack">
-                                    <img
-                                        src="./assets/media/hibernate-logo.png"
-                                        alt="hibernate-logo"
-                                    />
-                                    <p>Hibernate</p>
-                                </div>
-                                <div class="tech-stack">
-                                    <img
-                                        src="./assets/media/hugo-logo.png"
-                                        alt="hugo-logo"
-                                    />
-                                    <p>Hugo</p>
-                                </div>
-                                <div class="tech-stack">
-                                    <img
-                                        src="./assets/media/github-logo.png"
-                                        alt="github-logo"
-                                    />
-                                    <p>Github</p>
-                                </div>
-                                <div class="tech-stack">
-                                    <img
-                                        src="./assets/media/react-logo.png"
-                                        alt="react-logo"
-                                    />
-                                    <p>React</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+            <div class="backend">
+              <h4>Backend</h4>
+              <div class="technology">
+                <div class="tech-stack">
+                  <img src="./assets/media/java-logo.png" alt="java-logo" />
+                  <p>Java</p>
                 </div>
-            </section>
-            <section class="gallery-section" id="gallerySection">
-                <div class="gallery">
-                    <div class="gallery-details">
-                        <h4>Frame Archive</h4>
-                        <p>
-                            These are some memories I gathered throughout the
-                            lifetime.
-                        </p>
-                    </div>
-                    <div class="image-wrapper">
-                        <img
-                            src="./assets/media/me-with-friend-fest.jpeg"
-                            alt="friend-at-fest"
-                        />
-                        <img src="./assets/media/with-trio.jpeg" alt="at-uni" />
-                        <img
-                            src="./assets/media/fest-day-official.jpeg"
-                            alt="festival-day-official"
-                        />
-                        <img
-                            src="./assets/media/picture-day.jpeg"
-                            alt="picture-day"
-                        />
+                <div class="tech-stack">
+                  <img src="./assets/media/python-logo.png" alt="python-logo" />
+                  <p>Python</p>
+                </div>
+              </div>
+            </div>
+            <div class="db">
+              <h4>Database</h4>
+              <div class="technology">
+                <div class="tech-stack">
+                  <img
+                    src="./assets/media/mongodb-logo.png"
+                    alt="mongodb-logo"
+                  />
+                  <p>MongoDB</p>
+                </div>
+                <div class="tech-stack">
+                  <img src="./assets/media/mysql-logo.png" alt="mysql-logo" />
+                  <p>MySQL</p>
+                </div>
+              </div>
+            </div>
+            <div class="frameworks">
+              <h4>Frameworks & Technologies</h4>
+              <div class="technology">
+                <div class="tech-stack">
+                  <img
+                    src="./assets/media/tailwind-logo.png"
+                    alt="tailwind-logo"
+                  />
+                  <p>Tailwind</p>
+                </div>
+                <div class="tech-stack">
+                  <img
+                    src="./assets/media/bootstrap-logo.png"
+                    alt="bootstrap-logo"
+                  />
+                  <p>Bootstrap</p>
+                </div>
+                <div class="tech-stack">
+                  <img src="./assets/media/jquery-logo.png" alt="jquery-logo" />
+                  <p>JQuery</p>
+                </div>
+                <div class="tech-stack">
+                  <img
+                    src="./assets/media/hibernate-logo.png"
+                    alt="hibernate-logo"
+                  />
+                  <p>Hibernate</p>
+                </div>
+                <div class="tech-stack">
+                  <img src="./assets/media/hugo-logo.png" alt="hugo-logo" />
+                  <p>Hugo</p>
+                </div>
+                <div class="tech-stack">
+                  <img src="./assets/media/github-logo.png" alt="github-logo" />
+                  <p>Github</p>
+                </div>
+                <div class="tech-stack">
+                  <img src="./assets/media/react-logo.png" alt="react-logo" />
+                  <p>React</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="gallery-section" id="gallerySection">
+        <div class="gallery">
+          <div class="gallery-details">
+            <h4>Frame Archive</h4>
+            <p>These are some memories I gathered throughout the lifetime.</p>
+          </div>
+          <div class="image-wrapper">
+            <img
+              src="./assets/media/me-with-friend-fest.jpeg"
+              alt="friend-at-fest"
+            />
+            <img src="./assets/media/with-trio.jpeg" alt="at-uni" />
+            <img
+              src="./assets/media/fest-day-official.jpeg"
+              alt="festival-day-official"
+            />
+            <img src="./assets/media/picture-day.jpeg" alt="picture-day" />
 
-                        <img
-                            src="./assets/media/fest-day-friends.jpeg"
-                            alt="fest-day-with-friends"
-                        />
-                        <img
-                            src="./assets/media/at-gym.jpeg"
-                            alt="picture-day"
-                        />
-                        <img
-                            src="./assets/media/group-four.jpeg"
-                            alt="group-four"
-                        />
+            <img
+              src="./assets/media/fest-day-friends.jpeg"
+              alt="fest-day-with-friends"
+            />
+            <img src="./assets/media/at-gym.jpeg" alt="picture-day" />
+            <img src="./assets/media/group-four.jpeg" alt="group-four" />
 
-                        <img
-                            src="./assets/media/me-with-friend-trip.jpeg"
-                            alt="friend-at-trip"
-                        />
-                        <img
-                            src="./assets/media/matara-trip.jpeg"
-                            alt="matara-trip"
-                        />
-                        <img
-                            src="./assets/media/the-trio-at-trip.jpeg"
-                            alt="trio-at-trip"
-                        />
-                        <img
-                            src="./assets/media/nuwaraeliya-trip.jpeg"
-                            alt="nuwaraeliya-trip"
-                        />
-                    </div>
-                </div>
-            </section>
-            <section class="assignment-section" id="assignmentSection">
-                <div class="assignments">
-                    <div class="assignment-details">
-                        <h4>Assignments</h4>
-                        <p>
-                            These are some of the assignments that I done while
-                            learning.
-                        </p>
-                    </div>
-                    <div class="card-wrapper">
-                        <div class="card">
-                            <video
-                                src="./assets/media/assignments/a1.mp4"
-                                loop
-                                autoplay
-                                alt="assignment-1-video"
-                                playsinline
-                            ></video>
-                            <div class="card-details">
-                                <h3>CSS Assignment 01</h3>
-                                <p>
-                                    This is a basic navbar with animations when
-                                    hovering.
-                                </p>
-                                <ul>
-                                    <li>HTML</li>
-                                    <li>CSS</li>
-                                    <li>Animations</li>
-                                </ul>
-                                <a
-                                    href="https://github.com/ybdevo/css-assignment-transition-animation/blob/main/case1.html"
-                                >
-                                    <button>Visit</button>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <video
-                                src="./assets/media/assignments/a2.mp4"
-                                loop
-                                autoplay
-                                playsinline
-                                alt="assignment-2-video"
-                            ></video>
-                            <div class="card-details">
-                                <h3>CSS Assignment 02</h3>
-                                <p>
-                                    This is a basic hover animation where the
-                                    border animates.
-                                </p>
-                                <ul>
-                                    <li>HTML</li>
-                                    <li>CSS</li>
-                                    <li>Transitions</li>
-                                </ul>
-                                <a
-                                    href="https://github.com/ybdevo/css-assignment-transition-animation/blob/main/case2.html"
-                                >
-                                    <button>Visit</button>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <video
-                                src="./assets/media/assignments/a3.mp4"
-                                loop
-                                autoplay
-                                playsinline
-                                alt="assignment-3-video"
-                            ></video>
-                            <div class="card-details">
-                                <h3>CSS Assignment 03</h3>
-                                <p>
-                                    This is an animation where it is based on
-                                    key frames.
-                                </p>
-                                <ul>
-                                    <li>HTML</li>
-                                    <li>CSS</li>
-                                    <li>Animations</li>
-                                </ul>
-                                <a
-                                    href="https://github.com/ybdevo/css-assignment-transition-animation/blob/main/case3.html"
-                                >
-                                    <button>Visit</button>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <video
-                                src="./assets/media/assignments/a4.mp4"
-                                loop
-                                autoplay
-                                playsinline
-                                alt="assignment-4-video"
-                            ></video>
-                            <div class="card-details">
-                                <h3>CSS Assignment 04</h3>
-                                <p>
-                                    This is an animation effect which resembles
-                                    a water drop being spread.
-                                </p>
-                                <ul>
-                                    <li>HTML</li>
-                                    <li>CSS</li>
-                                    <li>Animations</li>
-                                </ul>
-                                <a
-                                    href="https://github.com/ybdevo/css-assignment-transition-animation/blob/main/case4.html"
-                                >
-                                    <button>Visit</button>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img
-                                src="./assets/media/assignments/c1.png"
-                                alt="assignment-5-img"
-                            />
-                            <div class="card-details">
-                                <h3>CSS Assignment 05</h3>
-                                <p>
-                                    This is a basic display of using positioning
-                                    and the box model.
-                                </p>
-                                <ul>
-                                    <li>HTML</li>
-                                    <li>CSS</li>
-                                    <li>Box Model</li>
-                                </ul>
-                                <a
-                                    href="https://github.com/ybdevo/css-assignment-03/blob/main/case1.html"
-                                >
-                                    <button>Visit</button>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img
-                                src="./assets/media/assignments/c2.png"
-                                alt="assignment-6-img"
-                            />
-                            <div class="card-details">
-                                <h3>CSS Assignment 06</h3>
-                                <p>
-                                    This is a basic beginner home page website
-                                    made using grid and box model.
-                                </p>
-                                <ul>
-                                    <li>HTML</li>
-                                    <li>CSS</li>
-                                    <li>Grid</li>
-                                </ul>
-                                <a
-                                    href="https://github.com/ybdevo/css-assignment-03/blob/main/case2.html"
-                                >
-                                    <button>Visit</button>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <video
-                                src="./assets/media/assignments/c3.mp4"
-                                loop
-                                autoplay
-                                playsinline
-                                alt="assignment-7-video"
-                            ></video>
-                            <div class="card-details">
-                                <h3>CSS Assignment 07</h3>
-                                <p>
-                                    This is a basic positioning assignment done
-                                    to showcase the box model and positioning.
-                                </p>
-                                <ul>
-                                    <li>HTML</li>
-                                    <li>CSS</li>
-                                    <li>Positioning</li>
-                                </ul>
-                                <a
-                                    href="https://github.com/ybdevo/css-assignment-03/blob/main/case3.html"
-                                >
-                                    <button>Visit</button>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <video
-                                src="./assets/media/assignments/c4.mp4"
-                                loop
-                                autoplay
-                                playsinline
-                                alt="assignment-8-video"
-                            ></video>
-                            <div class="card-details">
-                                <h3>CSS Assignment 08</h3>
-                                <p>
-                                    This is an basic positioning assignment done
-                                    to show case the box model and positioning.
-                                </p>
-                                <ul>
-                                    <li>HTML</li>
-                                    <li>CSS</li>
-                                    <li>Positioning</li>
-                                </ul>
-                                <a
-                                    href="https://github.com/ybdevo/css-assignment-03/blob/main/case4.html"
-                                >
-                                    <button>Visit</button>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img
-                                src="./assets/media/assignments/c5.png"
-                                alt="assignment-9-img"
-                            />
-                            <div class="card-details">
-                                <h3>CSS Assignment 09</h3>
-                                <p>
-                                    This is a basic assignment done to showcase
-                                    grid layout and using nth child to filter.
-                                </p>
-                                <ul>
-                                    <li>HTML</li>
-                                    <li>CSS</li>
-                                    <li>Grid Layout</li>
-                                </ul>
-                                <a
-                                    href="https://github.com/ybdevo/css-assignment-03/blob/main/case5.html"
-                                >
-                                    <button>Visit</button>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img
-                                src="./assets/media/assignments/c6.png"
-                                alt="assignment-10-img"
-                            />
-                            <div class="card-details">
-                                <h3>CSS Assignment 10</h3>
-                                <p>
-                                    This is a basic assignment done to showcase
-                                    grid column and row properties
-                                </p>
-                                <ul>
-                                    <li>HTML</li>
-                                    <li>CSS</li>
-                                    <li>Grid</li>
-                                </ul>
-                                <a
-                                    href="https://github.com/ybdevo/css-assignment-03/blob/main/case6.html"
-                                >
-                                    <button>Visit</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="chat-container">
-                <div class="suggestion-box">
-                    <div class="suggestion" id="about-me">
-                        <p class="suggestion-text">🎉 About Me</p>
-                    </div>
-                    <div class="suggestion" id="education">
-                        <p class="suggestion-text">🎓 Education</p>
-                    </div>
-                    <div class="suggestion" id="projects">
-                        <p class="suggestion-text">🚀 Projects</p>
-                    </div>
-                    <div class="suggestion" id="skills">
-                        <p class="suggestion-text">🔥 Skills</p>
-                    </div>
-                    <div class="suggestion" id="socials">
-                        <p class="suggestion-text">✌️ Socials</p>
-                    </div>
-                    <div class="suggestion" id="gallery">
-                        <p class="suggestion-text">📸 Gallery</p>
-                    </div>
-                </div>
-                <div class="chat">
-                    <i class="fa-solid fa-robot robot-icon"></i>
-                    <input
-                        placeholder="Enter something fun..."
-                        id="userInput"
-                        class="chat-text"
-                    />
-                    <button id="sendBtn" class="send-btn" data-label="Send">
-                        <i
-                            class="fa-solid fa-paper-plane fa-lg send-icon"
-                            aria-hidden="true"
-                        ></i>
-                    </button>
-                </div>
-            </section>
-        </main>
-        <script src="./scripts/script.js"></script>
-        <script src="./assets/lib/fontawesome/js/all.min.js"></script>
-    </body>
+            <img
+              src="./assets/media/me-with-friend-trip.jpeg"
+              alt="friend-at-trip"
+            />
+            <img src="./assets/media/matara-trip.jpeg" alt="matara-trip" />
+            <img
+              src="./assets/media/the-trio-at-trip.jpeg"
+              alt="trio-at-trip"
+            />
+            <img
+              src="./assets/media/nuwaraeliya-trip.jpeg"
+              alt="nuwaraeliya-trip"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="assignment-section" id="assignmentSection">
+        <div class="assignments">
+          <div class="assignment-details">
+            <h4>Assignments</h4>
+            <p>These are some of the assignments that I done while learning.</p>
+          </div>
+          <div class="card-wrapper">
+            <div class="card">
+              <video
+                src="./assets/media/assignments/a1.mp4"
+                loop
+                autoplay
+                alt="assignment-1-video"
+                playsinline
+              ></video>
+              <div class="card-details">
+                <h3>CSS Assignment 01</h3>
+                <p>This is a basic navbar with animations when hovering.</p>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Animations</li>
+                </ul>
+                <a
+                  href="https://github.com/ybdevo/css-assignment-transition-animation/blob/main/case1.html"
+                >
+                  <button>Visit</button>
+                </a>
+              </div>
+            </div>
+            <div class="card">
+              <video
+                src="./assets/media/assignments/a2.mp4"
+                loop
+                autoplay
+                playsinline
+                alt="assignment-2-video"
+              ></video>
+              <div class="card-details">
+                <h3>CSS Assignment 02</h3>
+                <p>
+                  This is a basic hover animation where the border animates.
+                </p>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Transitions</li>
+                </ul>
+                <a
+                  href="https://github.com/ybdevo/css-assignment-transition-animation/blob/main/case2.html"
+                >
+                  <button>Visit</button>
+                </a>
+              </div>
+            </div>
+            <div class="card">
+              <video
+                src="./assets/media/assignments/a3.mp4"
+                loop
+                autoplay
+                playsinline
+                alt="assignment-3-video"
+              ></video>
+              <div class="card-details">
+                <h3>CSS Assignment 03</h3>
+                <p>This is an animation where it is based on key frames.</p>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Animations</li>
+                </ul>
+                <a
+                  href="https://github.com/ybdevo/css-assignment-transition-animation/blob/main/case3.html"
+                >
+                  <button>Visit</button>
+                </a>
+              </div>
+            </div>
+            <div class="card">
+              <video
+                src="./assets/media/assignments/a4.mp4"
+                loop
+                autoplay
+                playsinline
+                alt="assignment-4-video"
+              ></video>
+              <div class="card-details">
+                <h3>CSS Assignment 04</h3>
+                <p>
+                  This is an animation effect which resembles a water drop being
+                  spread.
+                </p>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Animations</li>
+                </ul>
+                <a
+                  href="https://github.com/ybdevo/css-assignment-transition-animation/blob/main/case4.html"
+                >
+                  <button>Visit</button>
+                </a>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="./assets/media/assignments/c1.png"
+                alt="assignment-5-img"
+              />
+              <div class="card-details">
+                <h3>CSS Assignment 05</h3>
+                <p>
+                  This is a basic display of using positioning and the box
+                  model.
+                </p>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Box Model</li>
+                </ul>
+                <a
+                  href="https://github.com/ybdevo/css-assignment-03/blob/main/case1.html"
+                >
+                  <button>Visit</button>
+                </a>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="./assets/media/assignments/c2.png"
+                alt="assignment-6-img"
+              />
+              <div class="card-details">
+                <h3>CSS Assignment 06</h3>
+                <p>
+                  This is a basic beginner home page website made using grid and
+                  box model.
+                </p>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Grid</li>
+                </ul>
+                <a
+                  href="https://github.com/ybdevo/css-assignment-03/blob/main/case2.html"
+                >
+                  <button>Visit</button>
+                </a>
+              </div>
+            </div>
+            <div class="card">
+              <video
+                src="./assets/media/assignments/c3.mp4"
+                loop
+                autoplay
+                playsinline
+                alt="assignment-7-video"
+              ></video>
+              <div class="card-details">
+                <h3>CSS Assignment 07</h3>
+                <p>
+                  This is a basic positioning assignment done to showcase the
+                  box model and positioning.
+                </p>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Positioning</li>
+                </ul>
+                <a
+                  href="https://github.com/ybdevo/css-assignment-03/blob/main/case3.html"
+                >
+                  <button>Visit</button>
+                </a>
+              </div>
+            </div>
+            <div class="card">
+              <video
+                src="./assets/media/assignments/c4.mp4"
+                loop
+                autoplay
+                playsinline
+                alt="assignment-8-video"
+              ></video>
+              <div class="card-details">
+                <h3>CSS Assignment 08</h3>
+                <p>
+                  This is an basic positioning assignment done to show case the
+                  box model and positioning.
+                </p>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Positioning</li>
+                </ul>
+                <a
+                  href="https://github.com/ybdevo/css-assignment-03/blob/main/case4.html"
+                >
+                  <button>Visit</button>
+                </a>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="./assets/media/assignments/c5.png"
+                alt="assignment-9-img"
+              />
+              <div class="card-details">
+                <h3>CSS Assignment 09</h3>
+                <p>
+                  This is a basic assignment done to showcase grid layout and
+                  using nth child to filter.
+                </p>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Grid Layout</li>
+                </ul>
+                <a
+                  href="https://github.com/ybdevo/css-assignment-03/blob/main/case5.html"
+                >
+                  <button>Visit</button>
+                </a>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="./assets/media/assignments/c6.png"
+                alt="assignment-10-img"
+              />
+              <div class="card-details">
+                <h3>CSS Assignment 10</h3>
+                <p>
+                  This is a basic assignment done to showcase grid column and
+                  row properties
+                </p>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Grid</li>
+                </ul>
+                <a
+                  href="https://github.com/ybdevo/css-assignment-03/blob/main/case6.html"
+                >
+                  <button>Visit</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="chat-container">
+        <div class="suggestion-box">
+          <div class="suggestion" id="about-me">
+            <p class="suggestion-text">🎉 About Me</p>
+          </div>
+          <div class="suggestion" id="education">
+            <p class="suggestion-text">🎓 Education</p>
+          </div>
+          <div class="suggestion" id="projects">
+            <p class="suggestion-text">🚀 Projects</p>
+          </div>
+          <div class="suggestion" id="skills">
+            <p class="suggestion-text">🔥 Skills</p>
+          </div>
+          <div class="suggestion" id="socials">
+            <p class="suggestion-text">✌️ Socials</p>
+          </div>
+          <div class="suggestion" id="gallery">
+            <p class="suggestion-text">📸 Gallery</p>
+          </div>
+        </div>
+        <div class="chat">
+          <i class="fa-solid fa-robot robot-icon"></i>
+          <input
+            placeholder="Enter something fun..."
+            id="userInput"
+            class="chat-text"
+          />
+          <button id="sendBtn" class="send-btn" data-label="Send">
+            <i
+              class="fa-solid fa-paper-plane fa-lg send-icon"
+              aria-hidden="true"
+              style="color: black"
+            ></i>
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="./scripts/script.js"></script>
+    <script src="./assets/lib/fontawesome/js/all.min.js"></script>
+  </body>
 </html>
