@@ -16,6 +16,8 @@ const socialsSuggestion = document.getElementById("socials");
 const gallerySuggestion = document.getElementById("gallery");
 
 // Sections
+const loaderSection = document.getElementById("loaderSection");
+const mainSection = document.getElementById("mainSection");
 const projectSection = document.getElementById("projectSection");
 const skillSection = document.getElementById("skillSection");
 const heroSection = document.getElementById("heroSection");
@@ -114,6 +116,13 @@ skillsSuggestion.onclick = mySkills;
 socialsSuggestion.onclick = mySocials;
 gallerySuggestion.onclick = myGallery;
 sendBtn.onclick = response;
+
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    loaderSection.style.display = "none";
+    mainSection.style.display = "inline";
+  }, 1000);
+});
 
 userInput.addEventListener("keydown", (e) => {
   if (e.key == "Enter") {
@@ -221,7 +230,7 @@ async function response() {
           - Add some few emojis to enlight the conversation, to show your reaction, but remember to not add much.
 
         Here's the user input: ${msg}
-    `,
+    `
   );
 
   let actionObj = aiResponse;

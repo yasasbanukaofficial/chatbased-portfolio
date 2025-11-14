@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="./styles/global.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/hamster-model.css" />
+    <link rel="stylesheet" href="./styles/loader.css" />
     <link rel="stylesheet" href="./styles/chat-section.css" />
     <link rel="stylesheet" href="./styles/hero-section.css" />
     <link rel="stylesheet" href="./styles/results-section.css" />
@@ -32,7 +33,7 @@
     <title>Banu.</title>
   </head>
   <body>
-    <main>
+    <main id="mainSection" style="display: none">
       <header>
         <a href="./"><h1>banu.</h1></a>
         <a href="./"> <i class="fa-regular fa-house fa-2xl"></i></a>
@@ -562,6 +563,16 @@
         </div>
       </section>
     </main>
+    <section id="loaderSection">
+      <div class="circ">
+        <div class="load">Loading . . .</div>
+        <div class="hands"></div>
+        <div class="body"></div>
+        <div class="head">
+          <div class="eye"></div>
+        </div>
+      </div>
+    </section>
     <script src="./scripts/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"></script>
   </body>
