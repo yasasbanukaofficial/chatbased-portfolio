@@ -33,7 +33,8 @@ const current_yr = new Date().getFullYear();
 const age = current_yr - 2007;
 
 // Results
-const myImgUrl = "./assets/media/yasas-banuka.jpg";
+const myImgUrl =
+  "https://media.licdn.com/dms/image/v2/D5603AQFxiztzs4VjqA/profile-displayphoto-scale_200_200/B56ZqduDuRHQAY-/0/1763582688894?e=1765411200&v=beta&t=gnFcsMPDfT2_b8W_uVT0pRO2bZ03q6R_EHSntTdTbSg";
 const myDetails = `Hi I'm Yasas Banuka, a <em>tech nerd</em>,
   <strong>creative developer</strong> who loves to
   create "<em>unique</em>" solutions that attract
